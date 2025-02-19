@@ -9,9 +9,9 @@ public class OperatorEx002 {
 		
 		char ch ='\u1000';
 	    ch = 'a';
-	    System.out.println("q2: " + ( ch=='a'|| ch=='A') ); 
-	    System.out.println("q3: " + (ch >='0' && ch<='9') );
-	    System.out.println("q4: " + (ch >='A' && ch<='Z' || ch>='a' && ch<='z') );
+	    System.out.println("q2: " + ( ch=='a'  || ch=='A') ); 
+	    System.out.println("q3: " + ( ch >='0' && ch<='9') );
+	    System.out.println("q4: " + ( ch >='A' && ch<='Z' || ch>='a' && ch<='z') );
 	    
 		
 		
