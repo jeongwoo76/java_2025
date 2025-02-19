@@ -22,7 +22,7 @@ public class DataTypeEx004 {
 		// 출력 - 총점, 평균 출력 
 		//   총점 :  299
 		//   평균 :  99.67 
-		System.out.printf("총점 : %d \n 평균: %.2f", total, avg); //299 99.67
+		System.out.printf(" 총점 : %d \n 평균: %.2f", total, avg); //299 99.67
 		
 	}
 }
