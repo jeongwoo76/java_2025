@@ -19,3 +19,7 @@
 #### 6. 2025-02-24
 1.java -repeat - for / while / do while
 2. array - 1차원 배열
+
+#### 6. 2025-02-25
+1. array - 다차원 배열
+   
