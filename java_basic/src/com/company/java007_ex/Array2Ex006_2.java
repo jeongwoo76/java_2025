@@ -1,6 +1,6 @@
 package com.company.java007_ex;
 
-public class Array2Ex006 {
+public class Array2Ex006_2 {
 	public static void main(String[] args) {
 		int[][] datas = {  {  10, 10, 10 ,10},    // 00 01 02 03
 				           {  20, 20, 20 ,20},    // 10 11 12 13
