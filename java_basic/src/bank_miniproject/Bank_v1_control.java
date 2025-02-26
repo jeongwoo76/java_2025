@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Bank_v1_control {
 	public static void main(String[] args) {
 		// 변수
-		int num; char id=' ', pass=' '; int balance=0; 
+		int num; char id=' ', pass=' ', delete=' '; int balance=0,  deposit=0, Withdrawal=0; 
 		Scanner scanner = new Scanner(System.in);
 		// 입력 + 입력+ 처리+ 출력
 		//step1.
@@ -39,10 +39,63 @@ public class Bank_v1_control {
 				
 			break;  // end case2
 			case 3: System.out.println("입금기능입니다."); 
+			// step5
+			// 변수 - 임시변수 temp_id, 임시변수 temp_pass, deposit
+			// 입력 - 임시변수 temp_id, temp_pass 입력받기, 입금(deposit)
+			// 처리 - temp_id 와 id가 같고 temp_pass 와 pass가 같다면 입금완료 후 잔액 출력
+			//       아니라면 비밀번호 확인해주세요.  
+			temp_id =' '; temp_pass=' ';
+			System.out.print("ID : ");      temp_id = scanner.next().charAt(0);    
+			System.out.print("PASS: ");   temp_pass = scanner.next().charAt(0);
+			if(id==temp_id && pass==temp_pass) {System.out.print( "입금 : "); deposit = scanner.nextInt();  }
+			else {System.out.println("비밀번호 확인해주세요.");}
+			int balance1= balance+deposit;
+			System.out.println("==입금완료"+"\n잔액 :" + balance1  ); 
+			
 			break;  // end case3
 			case 4: System.out.println("출금기능입니다."); 
+			// step6
+			// 변수 - 임시변수 temp_id, 임시변수 temp_pass, Withdrawal
+			// 입력 - 임시변수 temp_id, temp_pass 입력받기, 출금(Withdrawal)
+			// 처리 - temp_id 와 id가 같고 temp_pass 와 pass가 같다면 사용자정보출력 출금완료 후 잔액 출력
+			// 아니라면 비밀번호 확인해주세요.
+			temp_id = ' ';
+			temp_pass = ' ';
+			System.out.print("ID : ");
+			temp_id = scanner.next().charAt(0);
+			System.out.print("PASS: ");
+			temp_pass = scanner.next().charAt(0);
+			if (id == temp_id && pass == temp_pass) {
+				System.out.print("출금 : ");
+				Withdrawal = scanner.nextInt();
+			} else {
+				System.out.println("비밀번호 확인해주세요.");
+			}
+			int balance2 = balance+deposit - Withdrawal;
+			System.out.println("==출금완료" + "\n잔액 :" + balance2  );
+			
 			break;  // end case4
 			case 5: System.out.println("삭제기능입니다."); 
+			// step7
+			// 변수 - 임시변수 temp_id, 임시변수 temp_pass, delete
+			// 입력 - 임시변수 temp_id, temp_pass 입력받기, 삭제 delete
+			// 처리 - temp_id 와 id가 같고 temp_pass 와 pass가 같다면 삭제할지 안할지 
+			// 아니라면 비밀번호 확인해주세요.
+			temp_id = ' ';
+			temp_pass = ' ';
+			System.out.print("ID : ");
+			temp_id = scanner.next().charAt(0);
+			System.out.print("PASS: ");
+			temp_pass = scanner.next().charAt(0);
+			if (id == temp_id && pass == temp_pass) {
+				System.out.println("계좌를 삭제하시겠습니까? (y/n) : ");
+				delete = scanner.next().charAt(0);
+				if(delete=='y') { } else if (delete=='n') { } 
+			} else {
+				System.out.println("비밀번호 확인해주세요.");
+			}
+			
+		
 			break;  // end case5
 		
         }
