@@ -20,7 +20,10 @@
 1.java -repeat - for / while / do while
 2. array - 1차원 배열
 
-#### 6. 2025-02-25
+#### 7. 2025-02-25
 1. array - 다차원 배열
 2. html+css - 이미지 태그 , 클릭이벤트
-   
+
+#### 8. 2025-02-26
+1. java-method 
+
