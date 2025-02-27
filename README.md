@@ -1,6 +1,7 @@
 ####  2025-02-27
 1. java-method(2) + oop(1)
-2.  mini pro ject -BANK  코드 점검 및 간소화 피드백 
+2.  mini pro ject -BANK  코드 점검 및 간소화 피드백
+3.  html + css +js - 버튼을 클릭하면 지정한 배경색상 글자색상 나오게하기  querySelector(".c").onclick 이용
 
 ####  2025-02-26
 1. java-method
