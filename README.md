@@ -3,7 +3,8 @@
 2.  mini pro ject -BANK  코드 점검 및 간소화 피드백 
 
 ####  2025-02-26
-1. java-method 
+1. java-method
+2. html + css +js - 버튼을 클릭하면 본인이름 알림창 띄우기 (onclick 이용!) / (document.getElementById 이용!)
 
 ####  2025-02-25
 1. array - 다차원 배열
