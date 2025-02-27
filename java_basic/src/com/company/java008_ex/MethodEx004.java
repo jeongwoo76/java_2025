@@ -25,7 +25,7 @@ public class MethodEx004 {
 	      System.out.println(":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::+\r" 
           +"이름\t국어\t영어\t수학\t총점\t평균\t합격여부\t장학생\t랭킹\r\n"
           +"--------------------------------------------------------------------------------------------");
-	      System.out.printf("%s\t%d\t%d\t%d\t%.2f\t%s\t%s\t%s\t",name, kor, eng, math, total, avg, pass, jang, star);	  
+	      System.out.printf("%s\t%d\t%d\t%d\t%d\t%.2f\t%s\t%s\t%s\t",name, kor, eng, math, total, avg, pass, jang, star);	  
 	      }
 	      
 	      public static void main(String[] args)  {
@@ -49,26 +49,26 @@ public class MethodEx004 {
 	    
 	   
 	      /////////////////////(3) 처리 : 
-	      // total = process_total(kor , eng, math);    // 1. 총점처리
+	      total = process_total(kor , eng, math);    // 1. 총점처리
 	      //total = kor+eng+math;
 	      
-	      // avg = process_avg(total);    //2.  평균처리
+	      avg = process_avg(total);    //2.  평균처리
 	      // avg =  total/(float)3;
 	      
 	      ////////3.  합격  평균이60이상이고, 각각 국어, 영어, 수학40이상/불합격/재시험-각각 40미만인게 있다면  
-	      // pass = process_pass(avg , kor, eng, math);  
+	      pass = process_pass(avg , kor, eng, math);  
 	      // if(avg >=60 && kor>=40 && eng>=40 && math >=40) {pass="합격";} else  {pass="불합격";}
 	      
 	      //////// 4. 평균이 95점이상이면 장학생
-	      // jang = process_scholar(  avg  ); 
+	      jang = process_scholar(  avg  ); 
 	      // if (avg>=95) {jang ="장학생";} 
 	      
 	      //////// 5. 평균점수대로 별표 붙이기 , 예) 70점대이면 별7개, 80점대이면 별8개, 90점대이면 별9개 , 100점이면 별10개 
-	      //star = process_star(avg);  
+	      star = process_star(avg);  
 	      
 	      
 	      /////////////////////(4) 출력
-	      //process_show(name, kor, eng, math, total, avg, pass, jang, star);
+	      process_show(name, kor, eng, math, total, avg, pass, jang, star);
 	    
 	   }// end main
 	 

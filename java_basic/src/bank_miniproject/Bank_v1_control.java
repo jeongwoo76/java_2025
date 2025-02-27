@@ -47,10 +47,12 @@ public class Bank_v1_control {
 			temp_id =' '; temp_pass=' ';
 			System.out.print("ID : ");      temp_id = scanner.next().charAt(0);    
 			System.out.print("PASS: ");   temp_pass = scanner.next().charAt(0);
-			if(id==temp_id && pass==temp_pass) {System.out.print( "입금 : "); deposit = scanner.nextInt();  }
-			else {System.out.println("비밀번호 확인해주세요.");}
+			if(id==temp_id && pass==temp_pass) {System.out.print( "입금 : "); deposit = scanner.nextInt(); 
 			int balance1= balance+deposit;
-			System.out.println("==입금완료"+"\n잔액 :" + balance1  ); 
+			System.out.println("==입금완료"+"\n잔액 :" + balance1  );}
+			
+		    else {System.out.println("비밀번호 확인해주세요.");}
+		
 			
 			break;  // end case3
 			case 4: System.out.println("출금기능입니다."); 
@@ -68,11 +70,11 @@ public class Bank_v1_control {
 			if (id == temp_id && pass == temp_pass) {
 				System.out.print("출금 : ");
 				Withdrawal = scanner.nextInt();
-			} else {
-				System.out.println("비밀번호 확인해주세요.");
-			}
 			int balance2 = balance+deposit - Withdrawal;
 			System.out.println("==출금완료" + "\n잔액 :" + balance2  );
+				} 
+			else {System.out.println("비밀번호 확인해주세요."); }
+			
 			
 			break;  // end case4
 			case 5: System.out.println("삭제기능입니다."); 
@@ -90,7 +92,7 @@ public class Bank_v1_control {
 			if (id == temp_id && pass == temp_pass) {
 				System.out.println("계좌를 삭제하시겠습니까? (y/n) : ");
 				delete = scanner.next().charAt(0);
-				if(delete=='y') { } else if (delete=='n') { } 
+				if(delete=='y') {id=' '; pass=' '; balance=0; } else if (delete=='n') { } 
 			} else {
 				System.out.println("비밀번호 확인해주세요.");
 			}
@@ -149,5 +151,63 @@ Step4. 조회
 잔액 : 10000
 암호 : 1111
 조회가 성공했습니다. 
+
+
 step5. 입금
+*ID : first
+*PASS : 1234
+다시 확인해주세요
+
+*ID : first
+*PASS : 1111
+입금 : 100
+==입금완료
+잔액:101
+
+
+step6. 출금
+
+*ID : first
+*PASS : 1234
+다시 확인해주세요
+
+*ID : first
+*PASS : 1111
+출금 : 100
+==출금완료
+잔액:1
+
+
+step7. 삭제
+입력5
+*ID : first
+*PASS : 1234
+다시 확인해주세요
+
+*ID : first
+*PASS : 1111
+계좌를 삭제하시겠습니까? (Y/N)
+n
+
+입력 2. 조회
+*ID : first
+*PASS : 1111
+==계좌조회
+*ID : first
+*PASS : 1111
+잔액 :1
+
+*ID : first
+*PASS : 1111
+계좌를 삭제하시겠습니까? (Y/N)
+y
+
+입력 2. 조회
+*ID : first
+*PASS : 1111
+다시 확인해주세요
+
+
+입력9.
+종료기능입니다.
  */
