@@ -1,8 +1,8 @@
-package test;
+package bank_miniproject;
 
 import java.util.Scanner;
 
-public class Bank_정우 {
+public class Bank_jw {
 	public static void main(String[] args) {
 		// 변수
 		int num;
