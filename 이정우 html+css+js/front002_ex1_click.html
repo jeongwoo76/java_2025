@@ -23,6 +23,34 @@
         <button  class="btn btn-warning my-3" onclick="alert('홍길동')"> TWO </button>
         <button  class="btn btn-info    my-3" onclick="alert(1); alert(2); alert(3);"> THREE </button>
      </div>
+     <!----BASIC-->
+     <div class="container card my-5">
+      <h3 class="card-header">EX</h3>
+      <div class="alert alert-danger my-3">
+      two   버튼을 클릭하면 본인이름 알림창 띄우기
+      </div>
+ <button  class="btn btn-warning my-3" onclick="alert('alpha')"  > TWO </button>
+ <button  class="btn btn-warning my-3" onclick="alert('dog'); alert('cat');"  > animal </button> 
+ <button  class="btn btn-warning my-3" id="a"  > animal2 </button> 
+ <button  class="btn btn-warning my-3" id="b"  > animal3 </button> 
+ <button  class="btn btn-warning my-3 c"   > animal4 </button> 
+ <script>
+ // !Doctype document 
+ //                  이벤트대상. 이벤트   = 이벤트핸들러(처리)
+ document.getElementById("a").onclick = function(){ alert('dog'); alert('cat'); };
 
+// #b -css 표현법 -아이디가 b
+  document.querySelector("#b").onclick = function(){
+  document.querySelector("#b").style.background ="black";
+  document.querySelector("#b").style.color ="white";
+ }
+ // .c -css 표현법 - 클래스가 c
+  document.querySelector(".c").onclick = function(){
+  // .c 배경색상을 pink / 글자색상을 blue
+  document.querySelector(".c").style.background ="pink";
+  document.querySelector(".c").style.color      ="blue";
+ }
+ </script>
+     </div>
 </body>
 </html>
