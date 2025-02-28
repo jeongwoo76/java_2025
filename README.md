@@ -1,3 +1,8 @@
+####  2025-02-28
+1.  mini pro ject -BANK  코드 점검 및 간소화 피드백 / 뱅크 프로젝트 동영상 (링크참고) 
+
+
+
 ####  2025-02-27
 1. java-method(2) + oop(1)
 2.  mini pro ject -BANK  코드 점검 및 간소화 피드백
