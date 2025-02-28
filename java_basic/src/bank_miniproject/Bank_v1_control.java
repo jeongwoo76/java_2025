@@ -97,7 +97,6 @@ public class Bank_v1_control {
 				System.out.println("비밀번호 확인해주세요.");
 			}
 			
-		
 			break;  // end case5
 		
         }

@@ -47,7 +47,6 @@ public class Bank_jw {
 				temp_pass = scanner.next().charAt(0);
 				if (!(id == temp_id && pass == temp_pass)) { System.out.println("비밀번호 확인해주세요.");  break;  }
 				
-				
 				if(num==2) {
 					System.out.println("조회기능입니다.");
 					System.out.println("ID: " + id + "\nPASS: " + pass + "\nBALANCE: " + balance);
