@@ -1,6 +1,7 @@
 ####  2025-03-06
 1.  OOP / abstract / interface
-2.  part1 selftest  피드백 및 보충내용 
+2.  part1 selftest  피드백 및 보충내용
+3.  css + js 이벤트 onclick 연습
 
 
 ####  2025-03-05
