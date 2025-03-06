@@ -1,10 +1,17 @@
+####  2025-03-06
+1.  OOP / abstract / interface
+2.  part1 selftest  피드백 및 보충내용 
+
+
 ####  2025-03-05
 1.  OOP / extends / 다형성
 2.  자리 바꿔서 소스트리 재설정
+3.  part1 selftest 
 
 
 ####  2025-03-04
 1.  OOP /final / modifier / class arr
+2.  part1 selftest 
    
 
 
