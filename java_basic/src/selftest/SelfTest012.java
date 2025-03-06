@@ -8,7 +8,11 @@ public class SelfTest012 {
 		int num;
 		Scanner scanner = new Scanner(System.in);
 		
-	  
+		while(true) {
+			System.out.print("숫자를 입력하세요>"); num = scanner.nextInt();
+			if (num>=1 && num<=100) {break;} 
+		}	
+		
 
 	}
 

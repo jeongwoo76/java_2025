@@ -3,7 +3,7 @@ package selftest;
 public class SelfTest010 {
 
 	public static void main(String[] args) {
-		int i=1;	do  {System.out.print(i+",");i++;} while( i<=10);
+		int i=1;	do  {System.out.print(i+(i==10 ? "":","));i++;} while( i<=10);
 
 	}
 
