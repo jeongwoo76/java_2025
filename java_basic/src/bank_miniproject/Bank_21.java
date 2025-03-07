@@ -1,12 +1,10 @@
-
-
-
 package bank_miniproject;
+ 
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Bank_jw2 {
+public class Bank_21 {
 	public static void main(String[] args) {
 		// 변수
 		int num;
@@ -64,19 +62,23 @@ public class Bank_jw2 {
 				// 처리 - temp_id 와 id가 같고 temp_pass 와 pass가 같다면 사용자정보출력
 				// 아니라면 비밀번호 확인해주세요.
 				String temp_id = "", temp_pass = "";
-				System.out.print("ID : ");
-				temp_id = scanner.next();
-				System.out.print("PASS: ");
-				temp_pass = scanner.next();
+				System.out.print("ID : "); temp_id = scanner.next();
+				System.out.print("PASS: "); temp_pass = scanner.next();
+				int find = -1;
+				// 1. 문자열의 비교는 equals
+				// 2. 여러명중에 번호 찾기 -찾았다면 찾은번호를 find에 담기
+				// 처음 3명 추가하고 조회할때 3명 다 검사해서 번호 찾기 
+				//ver-0 0번째와 입력받은 아이디와 비번이 같다면 find 에 0담기
+				
 				for (int i=0; i<=2; i++){
-				if (!(id[i] == temp_id && pass[i] == temp_pass)) { System.out.println("비밀번호 확인해주세요.");  break;  }
+					if (!(id[i].equals(temp_id) && pass[i].equals(temp_pass))) { 
+						System.out.println("비밀번호 확인해주세요."); break;  
+					} else {find=i;}
 				}
+				
 				if(num==2) {
 					System.out.println("조회기능입니다.");
-					for (int i=0; i<=2; i++){
-					System.out.println("ID: " + id[i] + "\nPASS: " + pass[i] + "\nBALANCE: " + balance[i]);
-					
-					}
+					System.out.println("ID: " + id[find] + "\nPASS: " + pass[find] + "\nBALANCE: " + balance[find]);
 				}
 		 /* else if(num==3) { 
 					System.out.println("입금기능입니다.");
