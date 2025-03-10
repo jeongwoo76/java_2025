@@ -1,3 +1,8 @@
+####  2025-03-07
+1. interface 복습 / exception /anoyclass nonameclass
+2. bank miniproject 배열 피드백
+
+
 ####  2025-03-06
 1.  OOP / abstract / interface
 2.  part1 selftest  피드백 및 보충내용
