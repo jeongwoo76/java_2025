@@ -10,7 +10,7 @@ class Sawon3{
 	//상태(멤버변수) -클래스변수/인스턴스변수/지역변수
     int pay      =10000;    // 인스턴스변수 - heap -new O -this, 생성자 
     static int su=10;       // 클래스변수  - method - new X - 공유
-//    static int basicpay=pay;  //X 클래스변수 = 인스턴스변수 (클리스변수, 클래스메서드 - this, 인스턴스사용불가) 
+//    static int basicpay=pay;  //X 클래스변수 = 인스턴스변수 (클래스변수, 클래스메서드 - this, 인스턴스사용불가) 
     static int basicpay2;    
     
     //행위(멤버함수)  - 클래스함수/ 인스턴스함수

@@ -10,11 +10,11 @@ public class SelfTest007 {
 	System.out.print("a,b,c 중에 입력해주세요>");  ch = scanner.next().charAt(0);
 	
 	switch(ch) {
-	case 'a' :   System.out.println("apple");   break;
+	case 'a' :   
 	case 'A' :   System.out.println("apple");   break;
-	case 'b' :   System.out.println("banana");  break;
+	case 'b' :   
 	case 'B' :   System.out.println("banana");  break;
-	case 'c' :   System.out.println("coconut"); break;
+	case 'c' :   
 	case 'C' :   System.out.println("coconut"); break;
 	
 	}
