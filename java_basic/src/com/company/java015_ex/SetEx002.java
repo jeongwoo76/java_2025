@@ -42,7 +42,7 @@ public class SetEx002 {
 		users.add(new UserInfo2(3, "캡틴"    , 120));
 		users.add(new UserInfo2(3, "캡틴"    , 120));
 		
-		//4. 향상된 for / Interator 이용해서 데이터 출력
+		//4. 향상된 for / Iterator 이용해서 데이터 출력
 		for(UserInfo2 u : users) {
 			System.out.println(u.getNo() +"/"+u.getName()+"/"+u.getAge()); } 
 		System.out.println();
@@ -81,6 +81,6 @@ public class SetEx002 {
 2. users   HashSet만들기
 3. 다음의 데이터 넣기
    new UserInfo(1, "아이언맨" , 50) , new UserInfo(2, "헐크" , 40) , new UserInfo(3, "캡틴" , 120)
-4. 향상된 for / Interator 이용해서 데이터 출력
+4. 향상된 for / Iterator 이용해서 데이터 출력
 5. 사용자들의 이름 입력받기 - 이름을 입력받으면 해당하는  유저의 자료출력
 */

@@ -40,7 +40,7 @@ Q11.  abstract 과 interface 의 차이점은?
           abstract 일반클래스+ 설계도 
  		  interface         설계도  
  		  멤버변수는 public static final 이 붙은 상수
- 		  멤버함수는 public abstract       abstsract 메서드
+ 		  멤버함수는 public abstract       abstract 메서드
  		  
 
 Q12. 다음과 같이 출력되게 코드를 작성하시오.
