@@ -1,3 +1,9 @@
+####  2025-03-17
+1. mysql
+2. jsp 
+
+
+
 ####  2025-03-14
 1. thread / network
 2.  Thread 상속 2) Runnable 인터페이스 구현  3) 익명개체
