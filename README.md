@@ -1,6 +1,7 @@
 ####  2025-03-17
-1. mysql
-2. jsp 
+1. mysql rdb/ table 만들기
+2. mysql key, alter table
+3. jsp  셋팅 및 동작원리
 
 
 
