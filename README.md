@@ -1,3 +1,11 @@
+####  2025-03-18
+1. mysql - crud( insert+update +delete)
+2. jsp  - jsp 기본요소 +form / jsp db연동 jdbc-statement
+
+
+            
+
+
 ####  2025-03-17 
 1. mysql rdb/ table 만들기
 2. mysql key, alter table
