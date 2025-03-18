@@ -1,3 +1,10 @@
+####  2025-03-17 
+1. mysql rdb/ table 만들기
+2. mysql key, alter table
+3. jsp  셋팅 및 동작원리
+
+
+
 ####  2025-03-14
 1. thread / network
 2.  Thread 상속 2) Runnable 인터페이스 구현  3) 익명개체
