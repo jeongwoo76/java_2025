@@ -1,6 +1,11 @@
+####  2025-03-20
+1. mysql select (2) order by +limit (3) 집계함수 
+2.   jsp jdbc -preparedStatement (우유주문시스템)
+
 ####  2025-03-19
 1. mysql select-basic 
 2.  jsp  jdbc 연동 Statement-PreparedStatement
+3.  2025.03.20 mysql select (2) order by +limit (3) 집계함수 /  jsp jdbc -preparedStatement (우유주문시스템)
 
 
 ####  2025-03-18
