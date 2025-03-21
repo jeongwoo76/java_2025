@@ -136,7 +136,7 @@
 	      		method ="방식" 데이터 노출안됨 (post)
 	       		name          oname, onum                    text, number
 	       -->	       
-			<form action="milk_insert.jsp" method="post">
+			<form action="milk_insert.jsp" method="post"  onsubmit="return form()">
 			  <div class="mb-3 mt-3">
 			    <label for="email" class="form-label">주문할 우유이름:</label>
 			    <input type="text" class="form-control" id="email" placeholder="주문할 우유이름을 적어주세요!" name="oname">
@@ -145,8 +145,17 @@
 			    <label for="pwd" class="form-label">주문할 우유갯수:</label>
 			    <input type="number" class="form-control" id="pwd" placeholder="우유갯수를 적어주세요!" name="onum">
 			  </div>		
-			  <button type="submit" class="btn btn-warning">주문하기</button>
-			</form>	       	  
+			  <button type="submit" class="btn btn-warning" value ="전송">주문하기</button>
+			</form>	   
+			<script>
+	    	function form() {
+	    	let one = document.querySelector("#email");
+	    	let two = document.querySelector("#pwd");
+	    	
+	    	if( email.value =="") { alert("빈칸입니다.");  email.focus();  return false; }
+	    	if( pwd.value =="") { alert("빈칸입니다.");  pwd.focus();  return false; }
+	    	}
+    		</script>    	  
 	       <!--  -->
 	       <!--  -->
 	      </div>
@@ -167,7 +176,7 @@
 	      		method ="방식" 데이터 노출안됨 (post)
 	       		name          ono, oname, onum                 number,  text, number
 	       -->	    	       
-			<form action="milk_update.jsp" method ="post">
+			<form action="milk_update.jsp" method ="post" onsubmit="return form()">
 			  <div class="mb-3 mt-3">
 			    <label for="ono_update" class="form-label">수정 주문번호</label>
 			    <input type="number" class="form-control" id="ono_update" placeholder="수정할 주문번호를 입력해주세요" name="ono">
@@ -180,8 +189,19 @@
 			    <label for="onum_update" class="form-label">수정 우유갯수</label>
 			    <input type="number" class="form-control" id="onum_update" placeholder="우유갯수를 적어주세요!" name="onum">
 			  </div>		
-			  <button type="submit" class="btn btn-warning">주문수정하기</button>
-			</form>	       	  
+			  <button type="submit" class="btn btn-warning" value ="전송">주문수정하기</button>
+			</form>	       	 
+			<script>
+	    	function form() {
+	    	let ono_update = document.querySelector("#ono_update");
+	    	let oname_update = document.querySelector("#oname_update");
+	    	let onum_update = document.querySelector("#onum_update");
+	    	
+	    	if( ono_update.value =="") { alert("빈칸입니다.");  ono_update.focus();  return false; }
+	    	if( oname_update.value =="") { alert("빈칸입니다.");  oname_update.focus();  return false; }
+	    	if( onum_update.value =="") { alert("빈칸입니다.");  onum_update.focus();  return false; }
+	    	}
+    		</script>    	   
 	       <!--  -->
 	       <!--  -->
 	      </div>
@@ -201,13 +221,20 @@
 	           <!-- action ="처리" milk_delete.jsp 
 	      		method ="방식" 데이터 노출됨 (get)
 	       		name          ono              number   -->
-			<form action="milk_delete.jsp" method ="get"  >
+			<form action="milk_delete.jsp" method ="get"  onsubmit="return form()" >
 			  <div class="mb-3">
 			    <label for="ono_delete" class="form-label">취소 주문번호</label>
 			    <input type="number" class="form-control" id="ono_delete" placeholder="취소할 주문번호를 적어주세요!" name="ono">
 			  </div>		
-			  <button type="submit" class="btn btn-warning">주문삭제하기</button>
-			</form>	       	  
+			  <button type="submit" class="btn btn-warning" value="전송">주문삭제하기</button>
+			</form>	   
+			<script>
+	    	function form() {
+	    	let ono_update = document.querySelector("#ono_delete");
+	   
+	    	if( ono_delete.value =="") { alert("빈칸입니다.");  ono_delete.focus();  return false; }
+	    	}
+    		</script>    	  
 	       <!--  -->
 	       <!--  -->
 	      </div>
