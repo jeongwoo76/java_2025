@@ -151,6 +151,7 @@
 	    	function form1() {
 	    	let oname_insert = document.querySelector("#oname_insert");
 	    	let onum_insert = document.querySelector("#onum_insert");
+	    	let one = document.querySelector("#oname_insert");
 	    	
 	    	if( oname_insert.value =="") { alert("빈칸입니다.");  oname_insert.focus();  return false; }
 	    	if( onum_insert.value =="") { alert("빈칸입니다.");  onum_insert.focus();  return false; }
