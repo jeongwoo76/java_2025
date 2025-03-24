@@ -1,3 +1,8 @@
+####  2025-03-24
+1. mysql select -join
+2.  jsp milk 피드백
+3.  jsp 내장객체 request_response
+
 ####  2025-03-20
 1. mysql select (2) order by +limit (3) 집계함수 
 2.   jsp jdbc -preparedStatement (우유주문시스템)
