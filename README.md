@@ -1,7 +1,8 @@
 ####  2025-03-25
 1. jsp milk 소스파일 수정
 2. readme 수정
-
+3. mysql -subquery
+4.  jsp - 내장객체 -session/cookie
 
 
 ####  2025-03-24
