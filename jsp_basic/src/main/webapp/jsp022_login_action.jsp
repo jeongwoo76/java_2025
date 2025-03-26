@@ -21,7 +21,8 @@
 		if (rset.next() ){  result = rset.getInt("cnt");  } // 줄, 칸
 		
 		if(result == 1){ // 아이디와 비밀번호가 같은사람 1명
-			request.getRequestDispatcher("jsp022_my.jsp").forward(request, response);
+			//request.getRequestDispatcher("jsp022_my.jsp").forward(request, response);
+			out.println("<script>location.href='jsp022_my.jsp';</script>");   // 바로 경로 넘기기
 			session.setAttribute("username", name);  // 세션정보유지하기 #
 		}else{ 
 			out.println("<script>alert('정보를 확인해주세요'); history.go(-1); </script>");
@@ -33,3 +34,4 @@
 		if(conn  != null){  conn.close();  }
 	}
 %>
+

@@ -7,9 +7,9 @@
 <!-- navbar -->
 
 	<div class="container card  my-5">
-		<h3 class="card-header mb-3"> LOGIN </h3> 
+		<h3 class="card-header mb-3"> join </h3> 
 		<p style="text-align:center; "><img src="images/login.png" alt="login"/></p>  
-		<form action="jsp022_login_action.jsp"  method="post"  onsubmit="return  form()">
+		<form action="user_join"  method="post"  onsubmit="return  form()">
 			<div class="my-3">
 				<label for="name"   class="form-label">아이디 </label>
 				<input type="text"  class="form-control"  id="name"  name="name" />      
