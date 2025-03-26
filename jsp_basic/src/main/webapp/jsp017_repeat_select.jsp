@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang ="ko">
+<html  lang="ko">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -12,39 +12,40 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<div class ="container card my-5">
-	<h3 class ="card-header bg-info text-white">select box</h3>
-	<h3 class="mb-3 mt-3">좋아하는 과일선택</h3>
-	<form action="jsp017_result.jsp" method="get" onsubmit="return select()">
-	  <div class="mb-3 mt-3">
-		<label for ="username" class="form-label">사용자이름</label>
-		<input type="text" class="form-control" id="username"
-			   placeholder="사용자이름을 적어주세요!" name="username">
-	  </div><!-- user name -->
-	  <!-- select -->
-	  <!-- select -->
-	  <label for ="fruit" >좋아하는 과일선택</label>
-	  <select class="form-select" id="fruit" name="fruit">
-	  	<option value="">...선택...</option>
-	  	<option  value="apple"   >APPLE</option>
-	  	<option  value="banana"  >BANANA</option>
-	  	<option  value="coconut" >COCONUT</option>  
-	  </select>
-	  <!-- select -->
-	  <!-- select -->
-	  <div class ="my-3">
-	  	<button type="submit" class ="btn btn-danger">수신체크하기</button>
-	</div>
-	</form>
-	<script>
-	function select(){
-		let username = document.querySelector("#username");
-		let fruit = document.querySelector("#fruit option:checked");
-		console.log(fruit.value);
-		if(username.value==""){alert("빈칸입니다."); username.focus(); return false; }
-		if(fruit.value==""){alert("옵션선택해주세요."); fruit.focus(); return false; }
-	}
-	</script>
-	</div>
+	<div class="container card my-5">
+		<h3 class="card-header  bg-info text-white">request(요청)- select</h3>
+		
+		<form action="jsp017_result.jsp"  method="get"  onsubmit="return select()"  >
+		  <div class="mb-3 mt-3">
+		    <label for="username" class="form-label">NAME:</label> 
+		    <input  type="text" class="form-control" id="username"
+					placeholder="사용자이름을 적어주세요!"  name="username">
+		   </div><!-- user name -->
+		   <!-- select -->
+		   <!-- select -->
+		    <label for="fruit"> FRUITS 선택 : </label>
+			<select class="form-select"  id="fruit"  name="fruit">
+			  <option value="" >-- 선택 --</option>
+			  <option value="apple" >APPLE</option>
+			  <option value="banana">BANANA</option>
+			  <option value="coconut">COCONUT</option> 
+			</select>
+  		   <!--  select -->
+  		   <!--  select -->
+		   <div class="my-3">
+		   	  <button  type="submit"  class="btn btn-primary" >전송</button>
+		   </div>			   	   
+		</form>
+		<script>
+ 			function select(){
+ 				let username = document.querySelector("#username");
+ 				let fruit    = document.querySelector("#fruit option:checked");
+ 				console.log(fruit.value);
+ 				if(username.value == ""){  alert("빈칸입니다."); username.focus(); return false;}
+ 				if(   fruit.value == ""){  alert("옵션선택해주세요"); fruit.focus(); return false;}
+ 				
+ 			}
+		</script>
+	</div>	
 </body>
-</html>
+</html> 
