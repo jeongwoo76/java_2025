@@ -1,5 +1,8 @@
 ####  2025-03-26
 1. jsp session 정리문제 정리 및 03.25 소스파일 오류 해결
+2. jsp mvc1 vs mvc2 /  dbcp
+3. servlet login 회원가입 확인 로그인 확인
+4. 필기내용 정리
 
 ####  2025-03-25
 1. jsp milk 소스파일 수정
