@@ -128,13 +128,13 @@
 	
 	<div class="container card my-5">
 		<h3 class="card-header  bg-info text-white">request(요청)-select</h3>
-		
+		 
 		<form action="jsp015_select.jsp"  method="get"  onsubmit="return check3()"  >
 		  <div class="mb-3 mt-3">
 		    <label for="username3" class="form-label">NAME:</label> 
 		    <input  type="text" class="form-control" id="username3"
 					placeholder="사용자이름을 적어주세요!" name="username">
-		   </div><!-- user name -->
+		  </div><!-- user name -->
 		   <!-- select -->
 		   <!-- select -->
 		   <label for="color">COLOR 선택</label>

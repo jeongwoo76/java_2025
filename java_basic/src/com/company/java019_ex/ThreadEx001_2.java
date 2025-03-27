@@ -1,4 +1,4 @@
-package com.company.java19_ex;
+package com.company.java019_ex;
 
 import javax.swing.JOptionPane;
 //방법1) Thread 1) Thread 2) run 실행해야하는 내용 3) start 실행

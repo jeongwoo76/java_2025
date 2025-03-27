@@ -1,4 +1,4 @@
-package jsp_basic;
+package com.company.dbmanager;
 
 import java.sql.Connection;
 import javax.naming.*;
@@ -20,6 +20,4 @@ public class DBManager {
 		return conn;
 	}
 }
-
-
 

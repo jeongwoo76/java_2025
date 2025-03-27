@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page  isErrorPage="true" %>    
+<%  response.setStatus(200); %>    
 <!DOCTYPE html>
 <html  lang="ko">
 <head>
@@ -13,29 +15,12 @@
 </head>
 <body>
 	<div class="container card  my-5">
-		<h3 class="card-header"> ERROR 설정 </h3>
-		<pre>
-		error
-		1. 4xx : 클라이언트 오류
-		   404 (페이지 없음) / 400 (bad quest)
-		2. 5xx : 서버오류    
-		   500 (내부서버오류) / 502 (서버과부하)
-		   
-		*해결방안   
-		1. error 안내페이지만들기   
-		2. [src]-[main]-[webapp]-[WEB-INF]-web.xml 에러처리 설정
-		</pre>
+		<%=exception.getMessage() %>
 		
-		<h4 class="card-haeder">1. ERROR 404 </h4>
-		<p><a href="no.jsp" class="btn btn-danger">NO PAGE</a></p>
-		
-		<h4 class="card-haeder">2. ERROR 500 </h4>
-		<%-- <%   int i=40/0;  %> --%>
+		<a href="<%=request.getContextPath()%>/"  class="btn btn-danger">HOME</a>
 	</div>
 </body>
 </html> 
-
-
 
 
 
