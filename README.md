@@ -1,3 +1,7 @@
+####  2025-03-27
+1.  jsp  JoAbooks project
+2.  FrontController  Board      
+
 ####  2025-03-26
 1. jsp session 정리문제 정리 및 03.25 소스파일 오류 해결
 2. jsp mvc1 vs mvc2 /  dbcp
