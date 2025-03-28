@@ -54,11 +54,11 @@
 	System.out.println(  dao.update(vo)  );  //1
 	System.out.println(  dao.select(3)   );
 	*/
-	//4. updatrHit
-	//System.out.println(dao.updateHit(3)); //1 성공 , -1 실패
+	//4. updateHit
+	//System.out.println(dao.updateHit(3)); //1 성공 , -1 실패  (있는번호로 체크)
 	
 	//3. select
-	//System.out.println(dao.select(3)); // 있는번호
+	//System.out.println(dao.select(3)); // 있는번호로 체크
 	
 	//2. insert( BoardVO vo) - btitle, bcontent,bname
 	/*
@@ -88,7 +88,15 @@
 	2. validator - 오류검사
 	3. 빈칸검사	 		
 	</pre>
-</div>	
+</div>	 <!-- END DIV -->	
+
+<div class="container card  my-5">
+	<h3 class="card-header"> PROJECT (4) CONTROLLER </h3>
+	<pre>
+	1. frontcontroller	  
+	2. controller 들 작성    
+	</pre>
+</div>		<!-- END DIV -->		
 	
 	
 <%@ include  file="inc/footer.jsp" %>	
