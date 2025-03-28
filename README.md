@@ -1,3 +1,10 @@
+####  2025-03-28
+1. JOAbooks 코드 소스 파일 수정
+2. jsp FrontCotroller Board 완성
+3. el jstl
+4. ajax
+5. NAVER API  
+
 ####  2025-03-27
 1.  jsp  JoAbooks project
 2.  FrontController  Board      
