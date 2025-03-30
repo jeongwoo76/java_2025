@@ -6,7 +6,7 @@
 	<h3> NAVER BOOK </h3>
 	<div class="result">
 	</div>
-	
+
 	<script>
 	//window.onload = function(){}; 브라우저 로딩되면 동작
 	// $() jquery
@@ -15,6 +15,7 @@
 		  $.ajax({
 		     url:"${pageContext.request.contextPath}/books",
 		     dataType:"json", 
+		     async : false,
 		     type:"GET",
 		     success:function(json){   // Object
 		    	 //1. 데이터 분해
@@ -36,14 +37,43 @@
 		     		 div12.append(div4).append(div8);  // div태그안에 p1추가하고 p2추가
 		     		 $(".result").append(div12);
 		     	 }
+
 		     	 //2. 보여줄화면에 껴넣기
 		     
 		     },error:function(xhr, textStatus, errorThrown){
 		        $(".result").html(textStatus + "(HTTP-" + xhr.status + "/" + errorThrown);
 		     } // $(".result")  document.querySelector(".result")
-		  });
+		  }); 
+		        
+		        
+		  $.ajax({
+			     url:"${pageContext.request.contextPath}/news",
+			     dataType:"json", 
+			     type:"GET",
+			     success:function(json){   // Object
+			    	 //1. 데이터 분해
+			    	 //console.log(json); 	    
+			     	 let items = json.items;
+			     	//console.log(items[0]); // 객체1개 items[0] = {title:"", image:"",,,,,};
+			     		 
+			     	for(let i2 =0; i2<items.length; i2++) {
+			     		 var div9 = $('<div class="row my-3">'); //<div></div> 태그만들기
+			     		 var div6  = $('<div class="col-sm-8">').html( 
+			     			'<a href="' + items[i2].link +'"><p>'+items[i2].title
+			     			+'</p><a>' );  //html reset해서 넣기
+			     		 div9.append(div6);  // div태그안에 p1추가하고 p2추가
+			     		 $(".result").append(div9);
+			     	 }
+			     	 //2. 보여줄화면에 껴넣기
+			     
+			     },error:function(xhr, textStatus, errorThrown){
+			        $(".result").html(textStatus + "(HTTP-" + xhr.status + "/" + errorThrown);
+			     } // $(".result")  document.querySelector(".result")
+			  });
 		
 	}); //2. jQuery 브라우저 로딩되면 동작
+	
+	
 	</script>
 </div>
 
