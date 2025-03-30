@@ -1,3 +1,7 @@
+####  2025-03-30
+1. joAbooks  숙제) 기능추가하기  api 한개더 추가  NAVER api + ajax 네이버뉴스
+
+
 ####  2025-03-28
  1. JOAbooks 코드 소스 파일 수정
  2. jsp FrontCotroller Board 완성
