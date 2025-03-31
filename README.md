@@ -1,5 +1,6 @@
 ####  2025-03-31
-1.  spring junit 오류 소스파일 받아서 해결
+1. spring 설치 및 설정 / ioc +di /bean
+2. spring junit 오류 소스파일 받아서 해결
 
 ####  2025-03-30
 1. joAbooks  숙제) 기능추가하기  api 한개더 추가  NAVER api + ajax 네이버뉴스
