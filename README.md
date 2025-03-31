@@ -1,6 +1,17 @@
-####  2025-03-27
-1.  jsp  JoAbooks project
-2.  FrontController  Board      
+####  2025-03-30
+1. joAbooks  숙제) 기능추가하기  api 한개더 추가  NAVER api + ajax 네이버뉴스
+
+
+####  2025-03-28
+ 1. JOAbooks 코드 소스 파일 수정
+ 2. jsp FrontCotroller Board 완성
+ 3. el jstl
+ 4. ajax
+ 5. NAVER API  
+ 
+ ####  2025-03-27
+ 1.  jsp  JoAbooks project
+ 2.  FrontController  Board    
 
 ####  2025-03-26
 1. jsp session 정리문제 정리 및 03.25 소스파일 오류 해결
