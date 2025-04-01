@@ -1,3 +1,9 @@
+####  2025.04.01
+1. spring002 datasource
+2. mybatis
+3. board 테스트
+
+
 ####  2025-03-31
 1. spring 설치 및 설정 / ioc +di /bean
 2. spring junit 오류 소스파일 받아서 해결
