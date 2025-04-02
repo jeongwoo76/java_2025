@@ -1,3 +1,8 @@
+####  2025.04.02
+1.  spring mybatis(2) review
+2.  mapperFactoryBean
+3.  MapperScannerConfigurer
+
 ####  2025.04.01
 1. spring002 datasource
 2. mybatis
