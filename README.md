@@ -1,3 +1,11 @@
+####  2025.04.03
+1. review  Datasource를 셋팅하고 db.properties를 이용하여 datasource를 연동 SimpleDriverDataSource
+2. MapperFactoryBean를 셋팅하고 select now()
+3. mvc를 설정하고 설정시 index.jsp
+4. spring useful jstl service 만들기 controller 작성 view에서 처리
+5. board 에 적용
+
+
 ####  2025.04.02
 1.  spring mybatis(2) review
 2.  mapperFactoryBean
