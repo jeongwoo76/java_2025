@@ -1,3 +1,10 @@
+####  2025.04.07
+1. springboot project
+2. setting(properties) - application.properties
+3. db - jpa
+4. view - layout 화면설정
+
+
 ####  2025.04.04
 1. spring jstl Board 완성
 2. 유용한기능들  lombok
