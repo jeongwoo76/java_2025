@@ -1,3 +1,11 @@
+####  2025.04.04
+1. spring jstl Board 완성
+2. 유용한기능들  lombok
+3.  Aop
+4.  HikariCP
+5.  Tx
+
+
 ####  2025.04.03
 1. review  Datasource를 셋팅하고 db.properties를 이용하여 datasource를 연동 SimpleDriverDataSource
 2. MapperFactoryBean를 셋팅하고 select now()
