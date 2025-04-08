@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,8 @@ public class Team {
 	//@Transient //3.컬럼인식못하게
 	//private String email;
 	
-	@OneToMany
+	// mappedBy 주인, 부모, 부모가 있으면 참조할수 있게... 자식
+	@OneToMany(mappedBy = "team" , cascade = CascadeType.REMOVE )
 	List<Member> member = new ArrayList<>();
 }
 /*
