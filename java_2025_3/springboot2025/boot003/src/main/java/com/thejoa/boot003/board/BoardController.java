@@ -5,6 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import lombok.RequiredArgsConstructor;
 
 @Controller
@@ -31,10 +34,14 @@ public class BoardController {
 	// http://localhost:8080/board/insert   (글쓰기 폼)
 	
 	@PostMapping("/board/insert")
-	public String insert_post(Board board){
-		service.insert(board); //## 글쓰기기능
+	public String insert_post(Board board, @RequestParam Long member_id){
+		System.out.println("....."+ board);
+		System.out.println("....."+ member_id);
+		service.insert(board, member_id); //## 글쓰기기능
 		return "redirect:/board/list";  
 	} // form테스트  (글쓰기 기능 - 갱신된리스트)
+	// @RequestParam - form, query string, 데이터 헤더로부터 데이터 추출
+	// @PathVariable - url 경로의 변수를 추출할때 사용
 	
 	@GetMapping("/board/update/{id}")
 	public String update_get( @PathVariable Long id, Model model) {
@@ -44,20 +51,26 @@ public class BoardController {
 	// http://localhost:8080/board/update/(있는번호) (글수정 폼)
 	
 	@PostMapping("/board/update")
-	public String update_post(Board board){
-		service.update(board); //## 글수정기능
-		return "redirect:/board/list";  
+	public String update_post(Board board, RedirectAttributes rttr){
+		String msg ="fail";
+		if(service.update(board) > 0 ) { msg="글 수정완료!"; }
+		rttr.addFlashAttribute("msg",msg);   //## 글수정기능
+		return "redirect:/board/detail/" + board.getId();  
 	} // 폼태그에서 테스트   (글수정 기능 - 갱신된리스트)
 	
-	@GetMapping("/board/delete")
-	public String delete_get( ) { return "board/delete";  } 
+	@GetMapping("/board/delete/{id}")
+	public String delete_get( @PathVariable Long id, Model model) { 
+		model.addAttribute("id", id);
+		return "board/delete";  } 
 	// http://localhost:8080/board/delete (글삭제 폼)
 
 	@PostMapping("/board/delete")
-	public String delete_post(Board board){
-		service.delete(board); //## 글삭제기능
+	public String delete_post(Board board, RedirectAttributes rttr){
+		String msg ="fail";
+		if(service.delete(board) > 0) { msg="글삭제성공!";}
+		rttr.addFlashAttribute("msg", msg);   //## 글삭제기능
 		return "redirect:/board/list";  
-	} // 폼태그에서 테스트   (글삭제 기능 - 갱신된리스트)
+	} // 폼태그에서 테스트    (글삭제 기능 - 갱신된리스트)
 	
 }
 /** Restful Api

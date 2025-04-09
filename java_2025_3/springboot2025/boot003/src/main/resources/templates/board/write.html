@@ -17,7 +17,7 @@
 				onsubmit="return  form()">
 				<div class="my-3">
 					<label for="member" class="form-label">이름</label> <input
-						type="text" name="member" id="member" class="form-control" th:value="1L" readonly>
+						type="text" name="member_id" id="member" class="form-control" th:value="2" readonly>
 				</div>
 				<div class="my-3">
 					<label for="btitle" class="form-label">제목</label> <input
@@ -46,18 +46,24 @@
 			<!-- end form -->
 			<script>
 				function form() {
-					let bname = document.getElementById("bname");
+					let member_id = document.getElementById("member_id");
 					let btitle = document.getElementById("btitle");
+					let bpass = document.getElementById("bpass");
 					let bcontent = document.getElementById("bcontent");
 
-					if (bname.value == "") {
+					if (member_id.value == "") {
 						alert("빈칸입니다");
-						bname.focus();
+						member_id.focus();
 						return false;
 					}
 					if (btitle.value == "") {
 						alert("빈칸입니다");
 						btitle.focus();
+						return false;
+					}
+					if (bpass.value == "") {
+						alert("빈칸입니다");
+						bpass.focus();
 						return false;
 					}
 					if (bcontent.value == "") {

@@ -30,10 +30,10 @@
 					<!--th:text= "동적으로꺼내온데이터"   -->
 					<!--th:href= "@{/board/insert}"   -->
 					<tr th:each=" dto, state : ${list}">
-						<td th:text="${state.index}"></td>
+						<td th:text="${list.size()-state.index}"></td> <!-- 3-0, 3-1, 3-2  No 정렬 -->
 						<td><a th:href="@{|/board/detail/${dto.id}|}" th:text="${dto.btitle}">첫번재 글쓰기입니다.</a></td>
 						<td th:text="${dto.member.name}"></td>
-						<td th:text="${dto.createDate}"></td>
+						<td th:text="${ #temporals.format(dto.createDate, 'yyyy-MM-dd HH:mm' )   }"></td> <!-- date 정렬 -->
 						<td th:text="${dto.bhit}"></td>
 					</tr>
 
