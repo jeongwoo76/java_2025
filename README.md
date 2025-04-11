@@ -1,3 +1,11 @@
+####  2025.04.10
+1. springboot review (복습문제)
+2. portfolio 주제선정 및 아이디어회의
+3. security(2)
+4. board + security 조합
+
+
+
 ####  2025.04.09
 1. springboot review (복습문제)
 2. springboot board 완성
