@@ -15,7 +15,8 @@ import javax.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
-@Entity @Getter @Setter
+@Entity 
+@Getter @Setter
 public class Team {
 	@Id //1. 기본키
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //2. 숫자자동증가

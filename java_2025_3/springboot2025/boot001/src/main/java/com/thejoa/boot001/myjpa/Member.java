@@ -1,12 +1,17 @@
 package com.thejoa.boot001.myjpa;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 import lombok.Getter;
@@ -38,6 +43,10 @@ public class Member {
 	private Team team; 
 	// 멤버(iron, hulk,thor,,,,)는 하나의 팀을 가진다.
 	// team_id 컬럼 자동으로 생김
+	
+	@ManyToMany(mappedBy="members")
+	private Set<ChatRoom> chatRooms = new HashSet<>();
+	
 }
 
 /*
