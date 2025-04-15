@@ -1,3 +1,10 @@
+####  2025.04.11
+1. 팀프로젝트 주요기능, 테이블(샘플) 피드백
+2. springboot boot1 ERD 다:다
+3. mysql ERD REVERSE
+
+
+
 ####  2025.04.10
 1. springboot review (복습문제)
 2. portfolio 주제선정 및 아이디어회의
