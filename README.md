@@ -1,3 +1,8 @@
+####  2025.04.16
+1. board + upload:img
+2. project 작업 및 피드백
+
+
 ####  2025.04.15
 1. board + paging
 2. project 작업 및 피드백
