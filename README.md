@@ -1,6 +1,6 @@
 ####  2025.04.17
 1. board + api
-
+2. project 작업 follow test
 
 
 ####  2025.04.16
