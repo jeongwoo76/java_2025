@@ -1,5 +1,10 @@
+####  2025.04.18
+1. board +api - KAKAO API
+2. 04.17 인터넷 이슈로 안올라간  boot007 파일 추가
+3. project 작업 follow test
+
 ####  2025.04.17
-1. board + api
+1. board + api 스케쥴러, 네이버개발자, 메일
 2. project 작업 follow test
 
 
