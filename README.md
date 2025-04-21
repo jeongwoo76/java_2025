@@ -1,3 +1,8 @@
+####  2025.04.21
+1. 생활형 ai +ajax
+3. project 작업 follow view db연동
+
+
 ####  2025.04.18
 1. board +api - KAKAO API
 2. 04.17 인터넷 이슈로 안올라간  boot007 파일 추가
