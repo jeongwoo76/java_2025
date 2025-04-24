@@ -1,3 +1,10 @@
+####  2025.04.24
+1. sms 문자보내기
+2. project 작업 diary에 follow 합쳐서 차단까지 db test
+3. project 작업 follow view 팔로워, 팔로잉 리스트 follow 버튼 test
+
+
+
 ####  2025.04.23
 1. 기상청 kma-xml 파싱
 2. project 작업 follow db test 수정
