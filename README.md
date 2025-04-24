@@ -1,3 +1,9 @@
+####  2025.04.23
+1. 기상청 kma-xml 파싱
+2. project 작업 follow db test 수정
+3. project 작업 follow view db연동
+
+
 ####  2025.04.21
 1. 생활형 ai +ajax
 3. project 작업 follow view db연동
