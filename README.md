@@ -1,3 +1,11 @@
+####  2025.05.08
+1. LINUX BASIC 실습환경구성/ 기본명령어
+2. AWS 회원가입
+3. 팀 프로젝트 포트폴리오 정리, 팔로우/차단 동영상 링크 https://youtu.be/fyXjxewcSSE
+
+####  2025.05.07
+1. springboot test
+
 ####  2025.04.24
 1. sms 문자보내기
 2. project 작업 diary에 follow 합쳐서 차단까지 db test
