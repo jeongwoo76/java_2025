@@ -20,3 +20,49 @@ bhit int not null default 0,
 bip	varchar(50) not null );
 desc sboard;
 alter table sboard modify bhit int not null default 0;
+select * from sboard;
+
+create database myboot;
+use myboot;
+show tables;
+desc team;
+select * from team;
+
+drop database yoonlee3;
+create database yoonlee3;
+use yoonlee3;
+show tables;
+drop table follow;
+drop table user;
+
+ALTER DATABASE yoonlee3
+CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_unicode_ci;
+
+
+ALTER TABLE diary CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER DATABASE yoonlee3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+
+SHOW VARIABLES LIKE 'character_set%';
+SHOW VARIABLES LIKE 'collation%';
+
+SELECT DATABASE();
+
+ALTER TABLE your_database_name.diary CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+create database mytest;
+use mytest;
+show tables;
+create table board (
+id bigint not null auto_increment primary key,
+btitle varchar(200) ,
+bcontent text ,
+bpass varchar(255) ,
+bhit bigint ,
+create_date datetime(6) ,
+bip	varchar(255) );
+desc board;
+
+
+
+
