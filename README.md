@@ -1,3 +1,9 @@
+####  2025.05.09
+1.  linux 복습문제
+2.  aws 프로젝트 올리기 메모장 정리
+3.  aws 인스턴스 설정
+4.  springboot boot010_board_aws
+
 ####  2025.05.08
 1. LINUX BASIC 실습환경구성/ 기본명령어
 2. AWS 회원가입
