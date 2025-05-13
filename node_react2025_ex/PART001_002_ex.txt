@@ -1,0 +1,22 @@
+............... PART1-2 연습문제
+Q1.  node_react2025_ex  폴더만들기
+Q2.  back 폴더만들고 이동
+Q3.  node  초기화   / 이름은 node_ex
+Q4.  express 설치
+Q5.  [routes] - user.js /  post.js  / posts.js  파일만들기
+> user.js   
+  post  /user          경로로 들어오면  회원가입출력
+  post  /user/login  경로로 들어오면  로그인출력
+  get    /user            사용자정보출력    {id:1 , email:'one@gmail.com'}
+  post  /logout         로그아웃출력      
+   
+
+> post.js   
+  post  /post        경로로 들어오면  글쓰기 출력
+
+
+> posts.js   
+  post  /posts        경로로들어오면 페이징 출력
+
+Q6.  app.js 만들기         
+      post.js / user.js / posts.js 파일분리하기   
