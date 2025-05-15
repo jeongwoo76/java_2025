@@ -1,5 +1,10 @@
+####  2025.05.13
+1. node.js(2) db sequelize  model - 시퀄라이즈 모델 / 관계
+2. 포트폴리오주제: 홍보/ 마케팅에 활용 가능한 SNS 사이트 제작 (Node.js 와 React 활용 ) 주제 선정 및 아이디어 회의
+
+
 ####  2025.05.12
-1. node.js node setting, 서버구동
+1. node.js(1) node setting, 서버구동
 2. express 라우팅
 3. model - 시퀄라이즈 모델 / 관계
 4. aws 인스턴스 새로 만들고 board_aws 프로젝트 실행 성공 했으나 이미지 파일이 깨짐
