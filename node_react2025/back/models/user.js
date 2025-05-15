@@ -50,7 +50,7 @@ module.exports = (  sequelize , DataTypes   ) => {
     id   기본값
     email        varchar(30)    필수, unique
     nickname  varchar(30)    필수, unique
-    password  varchar(30)    필수, unique
+    password  varchar(100)    필수, unique
     createdAt , updatedAt   --
    
 > 관계설정	
