@@ -62,6 +62,26 @@ bhit bigint ,
 create_date datetime(6) ,
 bip	varchar(255) );
 desc board;
+select * from board;
+
+
+desc member;
+
+
+drop database node_react;
+create database node_react;
+
+
+use node_react;
+show tables;
+select * from users;
+select * from posts;
+select * from hashtags;
+select * from images;
+
+desc `like`;
+select * from `like`;
+select * from comments;
 
 
 
