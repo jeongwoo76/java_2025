@@ -2,9 +2,11 @@ import React, { useState, useCallback } from "react";
 import { Input, Button, Form, Row, Col} from "antd";
 import Link from "next/Link";
 import Password from "antd/lib/input/Password";
+import userInput from '../hooks/userInput';
 
-const LoginForm = () => {
+const LoginForm = ({setIsLogin}) => {
   //////////////////////////////////////////////////// code
+ /*
   const [id, setId] =useState('');    // 상태관리 - 컴포넌트에서 값이 변경
   const onChangeId = useCallback((e) => {  // function - 함수의 재생성 방지
     console.log(e.target.value);
@@ -23,21 +25,37 @@ const LoginForm = () => {
     setCount( count +1 );
     console.log(count);
   };
+  */
+
+  const [id, onChangeId] = userInput('');
+  const [password, onChangePassword] = userInput('');   // userInput 줄이기
+
+  const onSubmitForm = useCallback(() => { // 컴포넌트가 처음 렌더링될때 한번만 생성
+      console.log(".......", id, password);
+      setIsLogin(true);
+  }, [id, password]);     //id, password 값이 변경될때  
 
   //////////////////////////////////////////////////// view
   return ( 
   <>
-    <Form layout="vertical" style={{ padding:'3%'}}>
-      <Form.Item label="아이디"  >
+    <Form layout="vertical" style={{ padding:'3%'}} onFinish={onSubmitForm}  >
+      <Form.Item label="아이디" name="id"  >
         <Input placeholder="user@gmail.com 형식으로 입력" 
-               name="id" value={id} onChange={onChangeId}  required />
+              value={id} onChange={onChangeId}  required />
       </Form.Item>
-      <Form.Item label="비밀번호"  >
+      <Form.Item label="비밀번호" name="password"  >
         <Input.Password  placeholder="비밀번호 입력" 
-                         name="password" value={password} onChange={onChangePassword} required />
+                        value={password} onChange={onChangePassword} required />
       </Form.Item>
       <Form.Item style={{textAlign:'center'}}>
-      <Button type="primary" style={{marginRight:'2%'}} onClick={onCount} >로그인 {count}</Button>
+      {/*<Button type="primary" style={{marginRight:'2%'}} onClick={onCount} >로그인 {count}</Button>*/}
+
+      <Button type="primary" 
+      style={{marginRight:'2%'}} 
+      htmlType='submit'
+      loading={false}
+      >로그인</Button>
+      
       <Link href="/signup" legacyBehavior><a><Button>회원가입</Button></a></Link>
       </Form.Item>
     </Form>

@@ -1,15 +1,23 @@
 import React from 'react';
 import AppLayout from '../components/AppLayout';
 import Head from 'next/head';
+import NickNameForm from '../components/NickNameForm';
+import FollowList from '../components/FollowList';
 
 const Profile = () => {
+  const data = [ { nickname:'Title 1'}, { nickname:'Title 2'}, {nickname:'Title 3'}, {nickname:'Title 4'} ];
+  console.log(data);
   return (
     <>
     <Head>
       <meta charSet="utf-8"/>
       <title>Profile | TheJoa</title>
     </Head>
-  <AppLayout> 내 프로필 </AppLayout>
+  <AppLayout> 
+    <NickNameForm/>
+    <FollowList   header="팔로잉"   data={data}  />  
+    <FollowList   header="팔로워"   data={data}  />  
+  </AppLayout>
   </>
   );
 };

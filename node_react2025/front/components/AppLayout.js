@@ -25,7 +25,7 @@ const AppLayout = ({children}) => {
   const changeLogo = () => { console.log('.....로고바꾸기'); setLogo('LOGIN') };
 
   // 2. login 상태
-  const [ isLogin, SetIsLogin] = useState(false);
+  const [ isLogin, setIsLogin] = useState(false);
 
   ///////////////////////////////////////// view
    return (
@@ -35,7 +35,8 @@ const AppLayout = ({children}) => {
           <Col xs={24} md={6}> 
             {/*<h3 onClick={() => { console.log('....'); }    }>{logo}</h3>*/}
             {/*<h3 onClick={changeLogo}>{logo}</h3>*/}
-            { isLogin? <UserProfile/> : <LoginForm/>}
+            { isLogin? <UserProfile setIsLogin={setIsLogin}    /> : 
+                       <LoginForm   setIsLogin={setIsLogin}    />}
           </Col>
           <Col xs={24} md={12} style={{backgroundColor:'#efefef'}} > {children} </Col>
           <Col xs={24} md={6}> <div>
