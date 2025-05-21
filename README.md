@@ -1,7 +1,8 @@
 ####  2025.05.21
-1. React.js (3) 댓글쓰기폼 / AppLayout.js > styledbg  useMemo 값 캐싱 #
-2. redux 설치 , 전개함수 , reducer
-3. 포트폴리오주제: 홍보/ 마케팅에 활용 가능한 SNS 사이트 제작 (Node.js 와 React 활용 ) 피그마 수정
+1. React.js (3) 댓글쓰기폼 
+2. css최적화 렌더링  AppLayout.js > styledbg  useMemo 값 캐싱 # 
+3. redux (중앙저장소) 설치 로그인/로그아웃 리덕스분리 , 전개함수 , reducer   - 리덕스 이용해서 POST 글쓰기 
+4. 포트폴리오주제: 홍보/ 마케팅에 활용 가능한 SNS 사이트 제작 (Node.js 와 React 활용 ) 피그마 수정
 
 
 ####  2025.05.20
