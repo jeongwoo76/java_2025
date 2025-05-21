@@ -3,36 +3,21 @@ import { Input, Button, Form, Row, Col} from "antd";
 import Link from "next/Link";
 import Password from "antd/lib/input/Password";
 import userInput from '../hooks/userInput';
+import { loginAction } from '../reducers/user';    //#1. redux
+import { useDispatch } from 'react-redux';    //#2. redux - useDispatch
 
-const LoginForm = ({setIsLogin}) => {
+// const LoginForm = ({setIsLogin}) => {
+  const LoginForm = () => { //#3. redux
   //////////////////////////////////////////////////// code
- /*
-  const [id, setId] =useState('');    // 상태관리 - 컴포넌트에서 값이 변경
-  const onChangeId = useCallback((e) => {  // function - 함수의 재생성 방지
-    console.log(e.target.value);
-     setId(e.target.value);  
-    }, []);   
-  
-  const [password, setPassword] = useState('');  
-  const onChangePassword = useCallback((e) => {
-      console.log(e.target.value);
-      setPassword(e.target.value);
-  });
-
-  //Q. 로그인버튼클릭시 - count 의 숫자 증가, 콘솔창에 숫자증가 (useState)
-  const [count, setCount] = useState(1);
-  const onCount = () => {
-    setCount( count +1 );
-    console.log(count);
-  };
-  */
-
   const [id, onChangeId] = userInput('');
   const [password, onChangePassword] = userInput('');   // userInput 줄이기
 
+  const dispatch = useDispatch();   //#4. redux
+
   const onSubmitForm = useCallback(() => { // 컴포넌트가 처음 렌더링될때 한번만 생성
       console.log(".......", id, password);
-      setIsLogin(true);
+    //  setIsLogin(true);
+    dispatch( loginAction({id, password}) );    //#5. redux
   }, [id, password]);     //id, password 값이 변경될때  
 
   //////////////////////////////////////////////////// view

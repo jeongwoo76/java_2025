@@ -1,9 +1,20 @@
-import React, {useState} from 'react'; // react 불러오기
+import React, {useState, useMemo} from 'react'; // react 불러오기   #
 import PropTypes from 'prop-types';       // props 타입검사하는 역할 
 import Link from 'next/Link';
 import { Menu, Input, Row, Col} from 'antd';   // 객체는 다 {} 감싸야함.
 import UserProfile from './UserProfile';
 import LoginForm from './LoginForm';
+import styled from 'styled-components';
+
+import { useSelector } from 'react-redux';   // ## reducer 1
+
+
+
+
+const InputSearch = styled(Input.Search)`
+  {vertical-align:middle;
+`;
+
 
 const AppLayout = ({children}) => {
   ///////////////////////////////////////// code
@@ -11,10 +22,10 @@ const AppLayout = ({children}) => {
       { label: <Link href="/" >LOGO</Link>           , key:'/'}
     , { label: <Link href="/profile" >프로필</Link>  , key:'/profile'}
     , { label: <Link href="/signup" >회원가입</Link> , key:'/signup'}
-    , { label: <Input.Search 
+    , { label: <InputSearch
               placeholder="input search text" 
               enterButton 
-              style={{verticalAlign:'middle'}}/> , key:'/search'}
+              /> , key:'/search'}
   ];
 
   /// 1. 변수 vs useState
@@ -25,7 +36,12 @@ const AppLayout = ({children}) => {
   const changeLogo = () => { console.log('.....로고바꾸기'); setLogo('LOGIN') };
 
   // 2. login 상태
-  const [ isLogin, setIsLogin] = useState(false);
+  // const [ isLogin, setIsLogin] = useState(false);
+  // 실수주의! ★ 객체라서 {} 꼭 넣어야 함 { isLogin }
+  const { isLogin } = useSelector(  (state) => state.user );      //## redux 2 
+
+  // useMemo
+  const stylebg = useMemo( ()=>({ backgroundColor:'#efefef' })   , [] );
 
   ///////////////////////////////////////// view
    return (
@@ -35,10 +51,10 @@ const AppLayout = ({children}) => {
           <Col xs={24} md={6}> 
             {/*<h3 onClick={() => { console.log('....'); }    }>{logo}</h3>*/}
             {/*<h3 onClick={changeLogo}>{logo}</h3>*/}
-            { isLogin? <UserProfile setIsLogin={setIsLogin}    /> : 
-                       <LoginForm   setIsLogin={setIsLogin}    />}
+            { isLogin? <UserProfile /> : <LoginForm />}     {/* ## redux 3 */}
+
           </Col>
-          <Col xs={24} md={12} style={{backgroundColor:'#efefef'}} > {children} </Col>
+          <Col xs={24} md={12} style={stylebg} > {children} </Col>
           <Col xs={24} md={6}> <div>
             <a href="https://thejoa.com" 
             target="_blank"

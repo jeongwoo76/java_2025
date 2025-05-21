@@ -1,11 +1,22 @@
 import React,{useCallback} from "react";
 import {Card, Avatar, Button } from 'antd';
+import styled from 'styled-components';   //##
 
-const UserProfile = ({setIsLogin}) => {
+import { logoutAction } from "../reducers/user"; //##1. redux
+import { useDispatch  } from "react-redux"; //##2. redux
+
+const ButtonWrapper = styled.div`
+    margin-top:5%;
+`;
+
+
+//const UserProfile = ({setIsLogin}) => {
+const UserProfile = () => {   //##3. redux
   /////////////////////////////   code
+  const dispatch = useDispatch();   //##4. redux
   // 로그아웃버튼을 누르면 로그아웃되게 만들기
   const onLogOut =useCallback(()=>{
-    setIsLogin(false);
+    dispatch(logoutAction);   //##5. redux
   }, []);
 
   /////////////////////////////   view
@@ -18,7 +29,9 @@ const UserProfile = ({setIsLogin}) => {
     >
     <Card.Meta  avatar={<Avatar>TheJoA</Avatar> }
       title='TheJoA'/>
-    <Button style={{marginTop:"5%"}} onClick={onLogOut}>로그아웃</Button>
+    <ButtonWrapper>
+      <Button onClick={onLogOut}>로그아웃</Button>
+    </ButtonWrapper>
     </Card>);
 }; 
 
