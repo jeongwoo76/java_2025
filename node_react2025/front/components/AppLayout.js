@@ -5,16 +5,11 @@ import { Menu, Input, Row, Col} from 'antd';   // 객체는 다 {} 감싸야함.
 import UserProfile from './UserProfile';
 import LoginForm from './LoginForm';
 import styled from 'styled-components';
-
 import { useSelector } from 'react-redux';   // ## reducer 1
-
-
-
 
 const InputSearch = styled(Input.Search)`
   {vertical-align:middle;
 `;
-
 
 const AppLayout = ({children}) => {
   ///////////////////////////////////////// code
@@ -38,7 +33,7 @@ const AppLayout = ({children}) => {
   // 2. login 상태
   // const [ isLogin, setIsLogin] = useState(false);
   // 실수주의! ★ 객체라서 {} 꼭 넣어야 함 { isLogin }
-  const { isLogin } = useSelector(  (state) => state.user );      //## redux 2 
+  const { user } = useSelector(  (state) => state.user );      //## redux 2 
 
   // useMemo
   const stylebg = useMemo( ()=>({ backgroundColor:'#efefef' })   , [] );
@@ -51,7 +46,7 @@ const AppLayout = ({children}) => {
           <Col xs={24} md={6}> 
             {/*<h3 onClick={() => { console.log('....'); }    }>{logo}</h3>*/}
             {/*<h3 onClick={changeLogo}>{logo}</h3>*/}
-            { isLogin? <UserProfile /> : <LoginForm />}     {/* ## redux 3 */}
+            { user? <UserProfile /> : <LoginForm />}     {/* ## redux 3 */}
 
           </Col>
           <Col xs={24} md={12} style={stylebg} > {children} </Col>

@@ -7,9 +7,9 @@ export const initialState = {
       , Images : [
                   { src:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' }, 
                   { src:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' }, 
-                  { src:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' },
+                  { src:'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png' },          
                 ]
-      , Comment:[{
+      , Comments:[{
           User:{nickname:'one'}, content:'hello'
     }, {
           User:{nickname:'two'}, content:'hi'

@@ -4,10 +4,12 @@ import Link from "next/Link";
 import Password from "antd/lib/input/Password";
 import userInput from '../hooks/userInput';
 import { loginAction } from '../reducers/user';    //#1. redux
-import { useDispatch } from 'react-redux';    //#2. redux - useDispatch
+import { useDispatch, useSelector } from 'react-redux';    //#2. redux - useDispatch
 
 // const LoginForm = ({setIsLogin}) => {
   const LoginForm = () => { //#3. redux
+
+  const { logInLoading } = useSelector(  (state) => state.user );    
   //////////////////////////////////////////////////// code
   const [id, onChangeId] = userInput('');
   const [password, onChangePassword] = userInput('');   // userInput 줄이기
@@ -38,7 +40,7 @@ import { useDispatch } from 'react-redux';    //#2. redux - useDispatch
       <Button type="primary" 
       style={{marginRight:'2%'}} 
       htmlType='submit'
-      loading={false}
+      loading={logInLoading}
       >로그인</Button>
       
       <Link href="/signup" legacyBehavior><a><Button>회원가입</Button></a></Link>
