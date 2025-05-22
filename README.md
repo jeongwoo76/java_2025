@@ -1,3 +1,8 @@
+####  2025.05.22
+1. react.js (4) PostCard -Image 이미지 캐러셀 ( react-slick) 
+2. saga 설치, axios, generator 함수, yield, 무한반복 
+
+
 ####  2025.05.21
 1. React.js (3) 댓글쓰기폼 
 2. css최적화 렌더링  AppLayout.js > styledbg  useMemo 값 캐싱 # 
