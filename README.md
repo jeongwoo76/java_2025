@@ -1,3 +1,9 @@
+####  2025.05.23
+1.react.js(5)   etc - 스크롤링, faker dummy
+2.  2-1. 점검 : eslint / 2-2. 아이디 안겹치게 short id / 2-3. 여러줄 코드 줄이기 - immer / 2-4. faker
+3. 로그인/ 로그아웃 하면 프로필 팔로잉 팔로워 리스트 숫자 /  글,댓글 쓰기하고 텍스트 초기화 글삭제
+4. 포트폴리오주제: 홍보/ 마케팅에 활용 가능한 SNS 사이트 제작 (Node.js 와 React 활용 ) 피드백 및 파트 나누기
+
 ####  2025.05.22
 1. react.js (4) PostCard -Image 이미지 캐러셀 ( react-slick) 
 2. saga 설치, axios, generator 함수, yield, 무한반복 
