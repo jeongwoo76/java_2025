@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import React, { useCallback, useState } from "react";
+import PropTypes from 'prop-types';
+import React, { useCallback, useState } from 'react';
 import {PlusOutlined} from '@ant-design/icons';
 import ImagesZoom from './ImagesZoom';
 

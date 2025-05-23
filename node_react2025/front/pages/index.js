@@ -7,14 +7,16 @@ import PostCard from '../components/PostCard';
 import { useSelector } from 'react-redux'; //##
 
 const Home = () => {
-  const { logInDone }   = useSelector( state => state.user);
-  const { mainPosts } = useSelector( state => state.post);
+  const { user }   = useSelector( state => state.user);
+  const { mainPosts }   = useSelector( state => state.post);
 
   return(<AppLayout> 
-    { logInDone && <PostForm /> }
-    { mainPosts.map( ( c )=> { return(
+    { user && <PostForm /> }
+    { mainPosts.map((c)=> { 
+      return(
       <PostCard   post={c}  key={c.id} /> 
     ); } )}
+
   </AppLayout>);
  };
 export default Home;

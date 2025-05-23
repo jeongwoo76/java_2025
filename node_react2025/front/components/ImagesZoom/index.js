@@ -1,5 +1,5 @@
-import React,{ useState} from "react";
-import PropTypes from "prop-types";
+import React,{ useState} from 'react';
+import PropTypes from 'prop-types';
 import Slick from 'react-slick';
 import {Header, CloseBtn, Overlay, SlickWrapper, ImgWrapper, Indicator, Global } from './style';
 
