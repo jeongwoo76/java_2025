@@ -1,9 +1,10 @@
-import {all, put, delay, fork, takeLatest} from 'redux-saga/effects';  //#1
+import {all, put, delay, fork, takeLatest, throttle} from 'redux-saga/effects';  //#1
 import {
 
 LOAD_POSTS_REQUEST,
 LOAD_POSTS_SUCCESS,
 LOAD_POSTS_FAILURE,
+generateDummyPost,    // 더미데이터 호출
 
 ADD_POST_REQUEST,
 ADD_POST_SUCCESS,
@@ -20,7 +21,7 @@ ADD_COMMENT_FAILURE
 } from '../reducers/post';
 
 ///// step3) addpost
-function addpostApi(data) { return axios.POST('/post');
+function addpostApi(data) { return axios.post('/post');
 }
 function* addpost(action) {
   // const result = yield call ( addpostApi, action.data);   처리함수, 처리파라미터
@@ -39,7 +40,7 @@ function* addpost(action) {
 } 
 
 /////  addComment
-function addCommentApi(data) { return axios.POST('/post/comment', data); }
+function addCommentApi(data) { return axios.post('/post/comment', data); }
 function* addComment(action) {
   try{
     yield delay(1000);  
@@ -56,7 +57,7 @@ function* addComment(action) {
 } 
 
 ///// removePost
-function removePostApi(data) {  return axios.POST('/post/', data); }
+function removePostApi(data) {  return axios.post('/post/', data); }
 function* removePost(action) {
   try{
     yield delay(1000);  
@@ -72,6 +73,25 @@ function* removePost(action) {
   }
 } 
 
+///// step3) loadPosts
+function loadPostsApi(data) { return axios.get('/post', data);
+}
+function* loadPosts(action) {
+  // const result = yield call ( addpostApi, action.data);   처리함수, 처리파라미터
+  try{
+    yield delay(1000);  
+    yield put({
+      type:LOAD_POSTS_SUCCESS,
+      data: generateDummyPost(10),    // result.data
+    })
+  } catch(error) {
+    yield put({
+      type:LOAD_POSTS_FAILURE,
+      data: error.response.data
+    });
+  }
+} 
+
 ///// step2) ACTION 기능추가
 function* watchAddPost() { 
   // yield take('ADD_POST' , addpost );              // ver-1. take는 일회용 - 로그인1번, 게시글도1번만
@@ -84,9 +104,14 @@ function* watchAddComment( ) {
   yield takeLatest(ADD_COMMENT_REQUEST , addComment ); 
 }
 
-// ADD_COMMENT_REQUEST
+// REMOVE_POST_REQUEST
 function* watchRemovePost( ) {
   yield takeLatest(REMOVE_POST_REQUEST , removePost );  //##
+}
+
+// LOAD_POSTS_REQUEST
+function* watchLoadPosts( ) {
+  yield throttle(5000, LOAD_POSTS_REQUEST , loadPosts );  //##
 }
 
 ///// step1) all()
@@ -95,6 +120,7 @@ export default function* postSaga() {
     fork(watchAddPost) ,  // fork - generator 함수들을 실행해줌.
     fork(watchRemovePost) ,
     fork(watchAddComment) ,
+    fork(watchLoadPosts) ,
   ]); 
 } 
  

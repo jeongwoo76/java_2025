@@ -1,4 +1,5 @@
-import {all, put, delay, fork, takeLatest} from 'redux-saga/effects';  //#1
+import {all, put, delay, fork, takeLatest, call} from 'redux-saga/effects';  //#1
+import axios from 'axios';  //##
 
 import {
   LOG_IN_REQUEST,
@@ -29,15 +30,16 @@ import {
 
 ///// step3)  login
 function loginApi(data) {   //*  여기는 generator 함수가 아니라서 * 빠짐  function* (X)  
-  return axios.POST('/user/login', data);
+  return axios.post('/user/login', data);
 }
 function* login(action) {
-  // const result = yield call ( loginApi, action.data ); 처리함수, 처리파라미터
+  
   try{
-    yield delay(1000);  // 1초
+    const result = yield call ( loginApi, action.data );  // 처리함수, 처리파라미터
+    //yield delay(1000);  // 1초
     yield put({
-      type:LOG_IN_SUCCESS,
-      data:action.data    // result.data
+      type: LOG_IN_SUCCESS,
+      data: result.data , // action.data // 
     })
   } catch(error) {
     yield put({
@@ -48,12 +50,13 @@ function* login(action) {
 }
 // logout 
 function logoutApi() {   //*  여기는 generator 함수가 아니라서 * 빠짐  function* (X)  
-  return axios.POST('/user/logout');
+  return axios.post('/user/logout');
 }
 function* logout() {
-  // const result = yield call ( logoutApi );   처리함수, 처리파라미터
+  
   try{
-    yield delay(1000);  
+    const result = yield call ( logoutApi );   // 처리함수, 처리파라미터
+    // yield delay(1000);  
     yield put({
       type:LOG_OUT_SUCCESS,
     })
@@ -65,12 +68,14 @@ function* logout() {
   }
 } 
 // signUp 
-function signUpApi() {   //*  여기는 generator 함수가 아니라서 * 빠짐  function* (X)  
-  return axios.POST('/user/');
+function signUpApi(data) {   //*  function* (X)   - 서버에 넘겨주는 값
+  return axios.post('/user/', data);        //    /user 경로, post, 회원가입정보(data)
 }
-function* signUp() {
+function* signUp(action) {
   try{
-    yield delay(1000);  
+    const result = yield call ( signUpApi, action.data );   // 처리함수, 처리파라미터   // 사용자가 화면에서 넘겨준값
+    console.log(result);
+    // yield delay(1000);  
     yield put({
       type:SIGN_UP_SUCCESS,
     })
@@ -121,6 +126,7 @@ export default function* userSaga() {
     fork(watchLogin) ,  // fork - generator 함수들을 실행해줌.
     fork(watchLogout) ,
     fork(watchSignup) , // 7.  ##
+    
     fork(watchChangeNickname) ,
 
   ]);

@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 //    [reducers] -user.js
 // step1) 초기값
 export const initialState = {
@@ -80,90 +82,78 @@ const dummyUser = (data) => ({
 });
 
 // step3) 이전 + 상태 = 다음상태
-export default ( state=initialState, action  ) => { 
+const reducer =  ( state= initialState, action  ) =>  produce( state, (draft)=>{ 
   switch(action.type) { 
+    ////////////////////////////////////////////////////////////  
     case LOG_IN_REQUEST:    // 액션
-      return {
-        ...state,    // 이전상태
-        logInLoading: true,  // 로그인 시도중  - 로딩창
-        logInDone: false, 
-        logInError: null, 
-      }
-    case LOG_IN_SUCCESS:    // 액션
-      return {
-        ...state,    // 이전상태
-        logInLoading: false,  
-        logInDone: true, 
-        user :dummyUser(action.data)
-      }
+      draft.logInLoading = true;
+      draft.logInDone = false;
+      draft.logInError = null;
+      break;
+      // return {
+      //   ...state,    // 이전상태
+      //   logInLoading: true,  // 로그인 시도중  - 로딩창
+      //   logInDone: false, 
+      //   logInError: null, 
+      // }
+    case LOG_IN_SUCCESS:    // 
+      draft.user = dummyUser(action.data);    //action.data
+      draft.logInLoading = false;
+      draft.logInDone = true;
+      break;
     case LOG_IN_FAILURE:    // 액션
-      return {
-        ... state,    // 이전상태
-        logInLoading: false,  
-        logInError: action.error, 
-      }  
+      draft.logInLoading = false;
+      draft.logInError = action.error;
+      break;  
+    ////////////////////////////////////////////////////////////    
     case LOG_OUT_REQUEST:    // 액션
-      return {
-        ... state,    // 이전상태
-        logOutLoading: true,  // 로그아웃 시도중  - 로딩창
-        logOutDone: false, 
-        logOutError: null, 
-      }
+      draft.logOutLoading = true;
+      draft.logOutDone = false;
+      draft.logOutError = null;
+      break;
     case LOG_OUT_SUCCESS:    // 액션
-      return {
-        ... state,    // 이전상태
-        logOutLoading: false,  
-        logOutDone: true, 
-        user : null,
-      }
+      draft.logOutLoading = false;
+      draft.logOutDone = true;
+      draft.user = null;
+      break;
     case LOG_OUT_FAILURE:    // 액션
-      return {
-        ... state,    // 이전상태
-        logOutLoading: false,  
-        logOutError: action.error, 
-      }  
+      draft.logOutLoading = false;
+      draft.logOutError = action.error;
+      break;
     ////////////////////////////////////////////////////////////  
     case SIGN_UP_REQUEST:    // 액션
-      return {
-        ... state,    // 이전상태
-        signUpLoading: true, // 회원가입 시도중
-        signUpDone: false,
-        signUpError: null,
-      }
+      draft.signUpLoading = true;
+      draft.signUpDone = false;
+      draft.signUpError = null;
+      break;
     case SIGN_UP_SUCCESS:    // 액션
-      return {
-        ... state,    // 이전상태
-        signUpLoading: false, 
-        signUpDone: true,
-      }
+      draft.signUpLoading = false;
+      draft.signUpDone = true;
+      break;
     case SIGN_UP_FAILURE:    // 액션
-      return {
-        ... state,    // 이전상태
-        signUpLoading: false, 
-        signUpError: action.error,
-      }    
+      draft.signUpLoading = false;
+      draft.signUpError = action.error;
+      break;
     ////////////////////////////////////////////////////////////  
     case CHANGE_NICKNAME_REQUEST:    // 액션
-      return {
-        ... state,    // 이전상태
-        changeNicknameLoading: true,
-        changeNicknameDone: false,
-        changeNicknameError: null,
-      }
+      draft.changeNicknameLoading = true;
+      draft.changeNicknameDone = false;
+      draft.changeNicknameError = null;
+      break;
     case CHANGE_NICKNAME_SUCCESS:    // 액션
-      return {
-        ... state,    // 이전상태
-        changeNicknameLoading: false,
-        changeNicknameDone: true,
-      }
+      draft.user.nickname = action.data.nickname;   //##
+      draft.changeNicknameLoading = false;
+      draft.changeNicknameDone = true;
+      break;
     case CHANGE_NICKNAME_FAILURE:    // 액션
-      return {
-        ... state,    // 이전상태
-        changeNicknameLoading: false,
-        changeNicknameError: action.error,
-      }    
+      draft.changeNicknameLoading = false;
+      draft.changeNicknameError = action.error;
+      break;
     ////////////////////////////////////////////////////////////  
-      default:
-      return { ...state }
-  }
-};
+      default:{
+      break;  //##
+      }    
+    }
+});
+
+export default reducer;
