@@ -1,3 +1,11 @@
+
+####  2025.05.26
+1. react(6) nickname
+2. immer- 코드줄이기 -user, post
+3. 무한로딩
+4. 서버연동 - 회원가입 , 로그인 , 로그아웃
+5. 포트폴리오주제: 홍보/ 마케팅에 활용 가능한 SNS 사이트 제작 (Node.js 와 React 활용 ) db, erd 추가 및 수정
+
 ####  2025.05.23
 1.react.js(5)   etc - 스크롤링, faker dummy
 2.  2-1. 점검 : eslint / 2-2. 아이디 안겹치게 short id / 2-3. 여러줄 코드 줄이기 - immer / 2-4. faker
