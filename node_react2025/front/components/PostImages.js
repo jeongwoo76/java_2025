@@ -12,7 +12,7 @@ const PostImages = ({ images }) => {
   if (images.length===1) {
     return (
       <>
-         <img role="presentation" src={images[0].src} alt={images[0].src} onClick={onZoom} />
+         <img role="presentation" src={`http://localhost:3065/${images[0].src}`} alt={images[0].src} onClick={onZoom} />
          { showImageZoom && <ImagesZoom images={images} onClose={onClose} /> }
       </>
     );
@@ -20,9 +20,9 @@ const PostImages = ({ images }) => {
   if (images.length===2) { 
      return (
       <>
-         <img role="presentation" src={images[0].src} 
+         <img role="presentation" src={`http://localhost:3065/${images[0].src}`} 
               alt={images[0].src} onClick={onZoom} style={{width:'50%', display:'inline-block'}} />
-         <img role="presentation" src={images[1].src} 
+         <img role="presentation" src={`http://localhost:3065/${images[1].src}`} 
               alt={images[1].src} onClick={onZoom} style={{width:'50%', display:'inline-block'}} />
          { showImageZoom && <ImagesZoom images={images} onClose={onClose} /> }
       </>

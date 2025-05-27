@@ -116,7 +116,7 @@ router.post('/logout', isLoggedIn, (req, res, next) => {  // 사용자가 로그
 // 1. 로그인
 // 2. Header 쿠키설정
 // 3. Body - [Raw] - [Json] { "nickname":"4444"}
-router.post('/nickname', isLoggedIn, async (req, res, next) => {
+router.patch('/nickname', isLoggedIn, async (req, res, next) => {
   // res.send('닉네임변경');
   // update users set nickname=? where id=?
   try {
@@ -125,9 +125,9 @@ router.post('/nickname', isLoggedIn, async (req, res, next) => {
     }, {
       where : { id : req.user.id }
     });
-    res.status(200).json({});
+    res.status(200).json({ message: '닉네임이 변경되었습니다.' });
   } catch(error) {
-    console.error(error);
+    console.error('닉네임 변경 중 오류:', error);
     next(error);
   }
 

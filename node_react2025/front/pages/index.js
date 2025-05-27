@@ -10,6 +10,8 @@ const Home = () => {
   const dispatch = useDispatch();   //##
   const { user }   = useSelector( state => state.user);
   const { mainPosts, hasMorePosts, loadPostsLoading }   = useSelector( state => state.post);  //##
+
+  /*
   //## 계속호출
   useEffect(()=>{
     if(hasMorePosts && !loadPostsLoading) {
@@ -41,6 +43,8 @@ const Home = () => {
       window.addEventListener('scroll', onScroll);  // 스코롤했으면 스크롤했던거 remove, 메모리에 쌓임
     }
   } , [mainPosts, hasMorePosts, loadPostsLoading]);
+
+  */
 
   return(<AppLayout> 
     { user && <PostForm /> }
