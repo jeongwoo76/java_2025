@@ -10,6 +10,8 @@ const { isLoggedIn} = require('./middlewares');
 const { error } = require('console');
 const { where, Model } = require('sequelize');
 
+/// c(Create)  r/u(findOne, findAll) d(destroy)
+
 /////  폴더 존재여부확인
 try{
     fs.accessSync('uploads'); // 폴더 존재여부 확인
@@ -40,7 +42,7 @@ const upload = multur({
 // create : 객체.create({})
 // select : 객체.findAll , 객체.findOne
 // update : 객체.update
-// delete : 객체.destory()
+// delete : 객체.destroy()
 
 
 // 2. 게시글 생성하고 관련데이터 저장하는 역할

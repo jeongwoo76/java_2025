@@ -125,7 +125,7 @@ router.patch('/nickname', isLoggedIn, async (req, res, next) => {
     }, {
       where : { id : req.user.id }
     });
-    res.status(200).json({ message: '닉네임이 변경되었습니다.' });
+    res.status(200).json({ nickname: req.body.nickname });
   } catch(error) {
     console.error('닉네임 변경 중 오류:', error);
     next(error);

@@ -1,22 +1,22 @@
-import React, { useCallback, useEffect } from 'react';
-import { Button, Form, Input } from 'antd';
-import PropTypes from 'prop-types';
-import userInput from '../hooks/userInput';
+import React, { useCallback, useEffect } from 'react'; // 리액트
+import { Button, Form, Input } from 'antd';  // 디자인
+import PropTypes from 'prop-types';          // 타입설정
+import userInput from '../hooks/userInput';  // 사용자입력 - hooks
 
 // 1. ADD_COMMENT_REQUEST
-import {ADD_COMMENT_REQUEST} from '../reducers/post';
+import {ADD_COMMENT_REQUEST} from '../reducers/post';   // request 요청
 // 2. useDispatch, useSelector
 import { useDispatch, useSelector } from 'react-redux';
 
 
 const CommentForm = ( { post } ) => {   // 어떤게시글에대한 댓글
   // 3. addCommentLoading, addCommentDone
-   const { addCommentLoading, addCommentDone } = useSelector(state => state.post); 
-   const id = useSelector(state => state.user.user?.id); 
+   const { addCommentLoading, addCommentDone } = useSelector(state => state.post);  // 중앙저장소
+   const id = useSelector(state => state.user.user?.id);    // 사용자체크
   // 4. dispatch
   const dispatch = useDispatch();
 
-  ////////////////////////////  code
+  ////////////////////////////  code  // 입력
  
   const [comment, onChangeComment, setComment] = userInput('');
 
@@ -27,9 +27,11 @@ const CommentForm = ( { post } ) => {   // 어떤게시글에대한 댓글
     }
   }, [addCommentDone]);
   
-  const onsubmitForm = useCallback(() => {
+  const onsubmitForm = useCallback(() => { // 전송버튼시
+    console.log(post.id, comment)
+    if(!id) { return alert('로그인이 필요합니다.'); }   // 로그인시 댓글달기
     dispatch({
-      type: ADD_COMMENT_REQUEST,
+      type: ADD_COMMENT_REQUEST,  // 타입요청
       data: {
         content: comment,
         userId: id,

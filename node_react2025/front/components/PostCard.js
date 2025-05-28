@@ -7,7 +7,10 @@ import { useSelector, useDispatch } from 'react-redux';  //## 2. useDispatch
 import PropTypes from 'prop-types';
 
 // 1. REMOVE_POST_REQUEST
-import {REMOVE_POST_REQUEST} from '../reducers/post';
+import {REMOVE_POST_REQUEST, LIKE_POST_REQUEST, UNLIKE_POST_REQUEST} from '../reducers/post';
+import { useEffect } from 'react';
+import { finishDraft } from 'immer';
+import FollowButton from './FollowButton';
 
 const PostCard = ({ post }) => {
   //////////////////////////////////////////  code
@@ -19,8 +22,24 @@ const PostCard = ({ post }) => {
   // console.log( id );
 
   //1. 좋아요 - false 
-  const [like, setLike] = useState(post.Likes && post.Likes.includes(id)); // post.Likes 배열 확인
-  const onClickLike = useCallback(() => { setLike((prev) => !prev); }, []);
+  //const [like, setLike] = useState(post.Likes && post.Likes.includes(id)); // post.Likes 배열 확인
+  const onClickLike = useCallback(() => {
+    if (!id) {return alert('로그인을 하시면 좋아요 추가가 가능합니다.'); }
+    return dispatch({
+      type: LIKE_POST_REQUEST,
+      data: post.id
+    });
+   }, [id]);
+
+    const onClickUnLike = useCallback(() => {
+    if (!id) {return alert('로그인을 하시면 좋아요 추가가 가능합니다.'); }
+    return dispatch({
+      type: UNLIKE_POST_REQUEST,
+      data: post.id
+    });
+   }, [id]);
+
+   const like = post.Likers?.find((v)=>(v.id === id)); // 내가 눌렀는지 체크
 
   //2. 댓글 - 댓글의 상태체크 / 댓글 처음에는 안 보이게, 클릭하면 토글 기능
   const [commentOpen, setCommentOpen] = useState(false);
@@ -44,7 +63,7 @@ const PostCard = ({ post }) => {
         actions={[
           <RetweetOutlined key="retweet" />,
           like ? (
-            <HeartTwoTone twoToneColor="#f00" key="heart" onClick={onClickLike} />
+            <HeartTwoTone twoToneColor="#f00" key="heart" onClick={onClickUnLike} />
           ) : (
             <HeartOutlined key="heart" onClick={onClickLike} />
           ),
@@ -67,6 +86,7 @@ const PostCard = ({ post }) => {
             <EllipsisOutlined />
           </Popover>,
         ]}
+        extra={ id && <FollowButton post={post}/> }
       >
         <Card.Meta
           avatar={<Avatar>{post.User.nickname[0]}</Avatar>}

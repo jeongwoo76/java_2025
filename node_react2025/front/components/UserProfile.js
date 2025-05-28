@@ -13,7 +13,7 @@ const ButtonWrapper = styled.div`
 //const UserProfile = ({setIsLogin}) => {
 const UserProfile = () => {    //## 3. redux
 
-  const { logOutLoading, user } = useSelector(state => state.user);
+  const { logOutLoading, user } = useSelector(state => state.user); // 중앙저장소
   ////////////////////////// code
   const dispatch = useDispatch();
   const onLogout = useCallback(() => {
