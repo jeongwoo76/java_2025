@@ -22,6 +22,7 @@ const Home = () => {
       })
     }
   }, [mainPosts, hasMorePosts, loadPostsLoading]);
+  
   //## 스코롤내려서 맨끝에서 다시 로딩
   useEffect(()=> {
     function onScroll() {
@@ -55,6 +56,9 @@ const Home = () => {
 
   </AppLayout>);
  };
+
+ //////////////////////////////////////////////////////////
+
 export default Home;
 
 

@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react'
 import { Card, Avatar, Button } from 'antd';
 import styled from 'styled-components';
+import Link from 'next/Link';
 
 import { useDispatch, useSelector } from 'react-redux';  //## 2. redux
 //import { logoutAction } from '../reducers/user';   //##### 1. redux
@@ -23,9 +24,15 @@ const UserProfile = () => {    //## 3. redux
   ////////////////////////// view
   return (<Card
     actions={[
-      <div key="sns">게시글<br /> {user.Posts ? user.Posts.length : 0}</div>
-      , <div key="followings">팔로잉<br />{user.Followings ? user.Followings.length : 0}</div>
-      , <div key="followers"> 팔로워<br />{user.Followers ? user.Followers.length : 0}</div>
+      <div key="sns"><Link href={`/user/${user.id}`}>
+        <span>게시글<br /> {user.Posts ? user.Posts.length : 0}</span>
+        </Link></div>
+      , <div key="followings"><Link href={`/profile`}>
+        <span>팔로잉<br />{user.Followings ? user.Followings.length : 0}</span>
+        </Link></div>
+      , <div key="followers"><Link href='/profile'>   {/* 이것도 가능*/} 
+        <span> 팔로워<br />{user.Followers ? user.Followers.length : 0}</span>
+        </Link></div>
     ]}
   >
     <Card.Meta avatar={<Avatar>{user.nickname[0]}</Avatar>}

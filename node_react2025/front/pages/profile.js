@@ -42,6 +42,7 @@ const Profile = () => {
     };
     fetchData();
   }, [followersLimit, followingsLimit]);
+  
   //3. 3명씩 followingsData 추가 - 3,6,9,,,
   const loadMoreFollowings = useCallback(() => {setFollowingsLimit(prev => prev+3); }, []);
   //4. 3명씩 followersData 추가  - 3,6,9,,,
@@ -60,8 +61,8 @@ const Profile = () => {
     </Head>
   <AppLayout> 
     <NickNameForm/>
-    <FollowList   header="팔로잉"   data={followingsData}  onClickMore={loadMoreFollowings} loading={ !followingsData  && !error}  />  
-    <FollowList   header="팔로워"   data={followersData}   onClickMore={loadMoreFollowers}  loading={ !followersData   && !error}  />  
+    <FollowList   header="팔로잉" data={followingsData} onClickMore={loadMoreFollowings} loading={ !followingsData  && !error} />  
+    <FollowList   header="팔로워" data={followersData}  onClickMore={loadMoreFollowers}  loading={ !followersData   && !error} />  
   </AppLayout>
   </>
   );
