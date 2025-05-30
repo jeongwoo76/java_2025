@@ -45,7 +45,7 @@ const User = () => {
 
   // 스크롤처리
   useEffect(()=> {
-      function onScroll() {
+      const onScroll = () => {
          //            내가 내린길이    + 화면에 보이는 높이                  = 브라우저길이
          console.log( window.screenY, document.documentElement.clientHeight, document.documentElement.scrollHeight )
          //            내가 내린길이    + 화면에 보이는 높이  >   브라우저길이-200px 아래정도로 오면은

@@ -1,4 +1,4 @@
-import React, {useState, useMemo} from 'react'; // react 불러오기   #
+import React, {useState, useMemo, useCallback} from 'react'; // react 불러오기   //##1
 import PropTypes from 'prop-types';       // props 타입검사하는 역할 
 import Link from 'next/Link';
 import { Menu, Input, Row, Col} from 'antd';   // 객체는 다 {} 감싸야함.
@@ -6,12 +6,24 @@ import UserProfile from './UserProfile';
 import LoginForm from './LoginForm';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';   // ## reducer 1
+import userInput from '../hooks/userInput'; //##
+import Router from 'next/router';  //##
+
 
 const InputSearch = styled(Input.Search)`
   {vertical-align:middle;
 `;
 
+//--
 const AppLayout = ({children}) => {
+  // useMemo
+  const stylebg = useMemo( ()=>({ backgroundColor:'#efefef' })   , [] );
+  const { user } = useSelector(  (state) => state.user );      //## redux 2 
+  const [searchInput, onChangeSearchInput] = userInput('');
+  const onSearch = useCallback(() => {
+    Router.push(`/hashtag/${searchInput}`);
+  }, [searchInput]);
+
   ///////////////////////////////////////// code
   const items = [
       { label: <Link href="/" >LOGO</Link>           , key:'/'}
@@ -20,6 +32,9 @@ const AppLayout = ({children}) => {
     , { label: <InputSearch
               placeholder="input search text" 
               enterButton 
+              value={searchInput}
+              onChange={onChangeSearchInput}
+              onSearch={onSearch}
               /> , key:'/search'}
   ];
 
@@ -33,10 +48,7 @@ const AppLayout = ({children}) => {
   // 2. login 상태
   // const [ isLogin, setIsLogin] = useState(false);
   // 실수주의! ★ 객체라서 {} 꼭 넣어야 함 { isLogin }
-  const { user } = useSelector(  (state) => state.user );      //## redux 2 
 
-  // useMemo
-  const stylebg = useMemo( ()=>({ backgroundColor:'#efefef' })   , [] );
 
   ///////////////////////////////////////// view
    return (

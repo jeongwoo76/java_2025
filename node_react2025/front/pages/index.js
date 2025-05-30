@@ -23,9 +23,9 @@ const Home = () => {
     }
   }, [mainPosts, hasMorePosts, loadPostsLoading]);
   
-  //## 스코롤내려서 맨끝에서 다시 로딩
+  //## 스크롤내려서 맨끝에서 다시 로딩
   useEffect(()=> {
-    function onScroll() {
+    const onScroll = () => {
        //            내가 내린길이    + 화면에 보이는 높이                  = 브라우저길이
        console.log( window.screenY, document.documentElement.clientHeight, document.documentElement.scrollHeight )
        //            내가 내린길이    + 화면에 보이는 높이  >   브라우저길이-200px 아래정도로 오면은
@@ -41,7 +41,7 @@ const Home = () => {
 
     window.addEventListener('scroll', onScroll);
     return () => {
-      window.removeEventListener('scroll', onScroll);  // 스코롤했으면 스크롤했던거 remove, 메모리에 쌓임
+      window.removeEventListener('scroll', onScroll);  // 스크롤했으면 스크롤했던거 remove, 메모리에 쌓임
     }
   } , [mainPosts, hasMorePosts, loadPostsLoading]);
 
