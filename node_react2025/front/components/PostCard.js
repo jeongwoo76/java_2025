@@ -5,9 +5,10 @@ import PostImages from './PostImages';
 import CommentForm from './CommentForm';
 import { useSelector, useDispatch } from 'react-redux';  //## 2. useDispatch
 import PropTypes from 'prop-types';
+import PostCardContent from './PostCardContent';
 
 // 1. REMOVE_POST_REQUEST
-import {REMOVE_POST_REQUEST, LIKE_POST_REQUEST, UNLIKE_POST_REQUEST} from '../reducers/post';
+import {REMOVE_POST_REQUEST, LIKE_POST_REQUEST, UNLIKE_POST_REQUEST, UPDATE_POST_REQUEST} from '../reducers/post';
 import { useEffect } from 'react';
 import { finishDraft } from 'immer';
 import FollowButton from './FollowButton';
@@ -53,6 +54,20 @@ const PostCard = ({ post }) => {
     });
   }, []);
 
+  //4. 수정
+  const [editMode, setEditMode] = useState(false);
+  const onClickUpdate  = useCallback(()=> {setEditMode(true); }, []);
+  const onCancelUpdate = useCallback(()=> {setEditMode(false); }, []);    //##
+  const onEditPost = useCallback( (editText)=> () => {
+    dispatch({
+      type: UPDATE_POST_REQUEST,
+      data: { PostId:post.id, content:editText }
+    });
+  }, [post]); 
+
+  //5. 리게시물
+
+
   //////////////////////////////////////////  view
   return (
     <div style={{ margin: '3%' }}>
@@ -73,7 +88,7 @@ const PostCard = ({ post }) => {
               <Button.Group>
                 {id && id === post.User.id ? (
                   <>
-                    <Button>수정</Button>
+                    <Button onClick={onClickUpdate}>수정</Button>
                     <Button type="danger" 
                         loading={removePostLoading} onClick={onRemovePost} >삭제</Button>
                   </>
@@ -91,8 +106,13 @@ const PostCard = ({ post }) => {
         <Card.Meta
           avatar={<Avatar>{post.User.nickname[0]}</Avatar>}
           title={post.User.nickname}
-          description={typeof post.content === 'object' ? post.content.text : post.content}
-        />
+          description={ <PostCardContent 
+                              editMode={editMode}
+                              onChangePost={onEditPost}
+                              onCancelUpdate={onCancelUpdate}
+                              postData={post.content} /> }
+          />
+
       </Card>
       {commentOpen && (
         <>

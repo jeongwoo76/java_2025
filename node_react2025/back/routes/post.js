@@ -141,6 +141,41 @@ router.delete('/:postId', isLoggedIn, async (req, res, next) => {
   }
 }); 
 
+
+// 글수정
+// PATCH : localhost:3065/post/:postId   로그인을 했다면
+router.patch( '/:postId', isLoggedIn, async (req, res, next) => {
+    const hashtags = req.body.content.match(/#[^\s#]+/g);
+    try{
+      // 글수정   update
+      await Post.update({
+        content:req.body.content,
+      }, {
+        where: {
+          id: req.params.postId,  
+          UserId: req.user.id,
+        }
+      });
+      // 해시태그 findOrCreate
+      const post = await Post.findOne({where:{id:req.params.postId}});    // 게시글 찾아오기
+      if (hashtags) {   // 해시태그가 존재한다면
+        const result = await Promise.all( hashtags.map(  // 해시태그들다시조립
+          (tag)=>Hashtag.findOrCreate({ // 찾거나 생성하거나
+          where: { name: tag.slice(1).toLowerCase()},
+          })
+        )); 
+        await post.setHashtags(result.map( (v)=> v[0]));
+      }
+      res.status(200).json({ PostId: parseInt(req.params.postId, 10), content: req.body.content });
+
+    }catch(error) {
+      console.error(error);
+      next(error);
+    }
+});
+
+
+
 ////////////////////////////////////////////////////////
 // 4. 좋아요 추가
   // 1. PATCH         localhost:3065/post/1/like    (글번호)
