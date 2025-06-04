@@ -9,6 +9,11 @@ const PostImages = ({ images }) => {
   const onZoom = useCallback( () => {setShowImageZoom(true);   }, []);
   const onClose = useCallback( () => {setShowImageZoom(false); }, []);
 
+  // 방어 코드: images가 없거나 배열이 아니거나 비어있으면 null 반환
+  if (!Array.isArray(images) || images.length === 0) {
+    return null;
+  }
+
   if (images.length===1) {
     return (
       <>

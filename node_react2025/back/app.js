@@ -13,11 +13,11 @@ const morgan = require('morgan');   // 요청상태 모니터
 
 const basicRouter = require('./routes/basic'); 
 const testRouter = require('./routes/test'); 
-const user = require('./routes/user');    
-const post = require('./routes/post');  
-const posts = require('./routes/posts'); 
-const hashtag = require('./routes/hashtag'); //##
-
+const userRouter = require('./routes/user');    
+const postRouter = require('./routes/post');  
+const postsRouter = require('./routes/posts'); 
+const hashtagRouter = require('./routes/hashtag'); //##
+const apiRouter = require('./routes/api');
 
 //2. 환경설정
 dotenv.config();    // 환경설정 .env 로드
@@ -57,10 +57,12 @@ app.use( passport.session());       // 사용자 인증상태를 세션에 저�
 app.get('/', (req, res) => { res.send('Hello express'); });
 app.use('/api', basicRouter); 
 app.use('/test', testRouter); 
-app.use('/user', user);
-app.use('/post', post);  //##  ← '/post'로 들어오는 요청을 post가 처리
-app.use('/posts', posts); 
-app.use('/hashtag', hashtag); //##
+app.use('/user', userRouter);
+app.use('/post', postRouter);  //##  ← '/post'로 들어오는 요청을 post가 처리
+app.use('/posts', postsRouter); 
+app.use('/hashtag', hashtagRouter); //##
+app.use('/api', apiRouter); //## 
+
 
 //6. 서버설정 및 실행
 app.listen(3065, () => { console.log('server....'); });
