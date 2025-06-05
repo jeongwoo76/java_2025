@@ -1,3 +1,6 @@
+#### 2025.06.05
+1. react(13) 서버사이드렌더링 / components/PostCard.js 카카오개발자 - 카카오톡 공유 추가
+
 #### 2025.06.04
 1. react (12) 서버연동 - 리트윗/ node-naver api
 2. 포트폴리오주제: 홍보/ 마케팅에 활용 가능한 SNS 사이트 제작 (Node.js 와 React 활용 ) front 페이지 작성 및 db 수정
