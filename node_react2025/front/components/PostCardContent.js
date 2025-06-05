@@ -15,25 +15,27 @@ const PostCardContent = ({postData, editMode, onChangePost, onCancelUpdate}) => 
   //////////////////////////  code
 
   //////////////////////////  view
-  return (<div>
-    { editMode ? (
-      <>
-        <Input.TextArea value={editText} onChange={onChangeText} />
-        <Button.Group style={{margin:'10px 0'}}>
-          <Button  loading={updatePostLoading} onClick={onChangePost(editText)} style={{margin:'5px'}} >수정</Button>
-          <Button  type="primary" onClick={onClickCancel} style={{margin:'5px'}} >취소</Button>
-        </Button.Group>
-      </>
-    ) : ( postData.split(/(#[^\s#]+)/g)   //해시태그
-                  .map((v, i)=>{ 
-                    if( v.match(/(#[^\s#]+)/) ){ 
-                      return <Link href={`/hashtag/${v.slice(1)}`} prefetch={false}  key={i}>{v}</Link>; 
-                    }
-                    return v;
-                  })
-    )
-    }
-  </div>);
+  return (
+    <div>
+      { editMode ? (
+        <>
+          <Input.TextArea value={editText} onChange={onChangeText} />
+          <Button.Group style={{margin:'10px 0'}}>
+            <Button  loading={updatePostLoading} onClick={onChangePost(editText)} style={{margin:'5px'}} >수정</Button>
+            <Button  type="primary" onClick={onClickCancel} style={{margin:'5px'}} >취소</Button>
+          </Button.Group>
+        </>
+      ) : ( postData.split(/(#[^\s#]+)/g)   //해시태그
+                    .map((v, i)=>{ 
+                      if( v.match(/(#[^\s#]+)/) ){ 
+                        return <Link href={`/hashtag/${v.slice(1)}`} prefetch={false}  key={i}>{v}</Link>; 
+                      }
+                      return v;
+                    })
+      )
+      }
+    </div>
+  );
 };
 PostCardContent.propTypes = {
   postData : PropTypes.string.isRequired,

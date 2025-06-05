@@ -1,8 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useCallback, useEffect } from 'react';
+import PropTypes, { object } from 'prop-types';
 
 import { Card, Avatar, Button, List, Comment, Popover } from 'antd';
-import { EllipsisOutlined, HeartOutlined, HeartTwoTone, MessageOutlined, RetweetOutlined } from '@ant-design/icons';
+import { EllipsisOutlined, HeartOutlined, HeartTwoTone, MessageOutlined, RetweetOutlined, ShareAltOutlined } from '@ant-design/icons';
 import PostImages from './PostImages';
 import CommentForm from './CommentForm';
 import PostCardContent from './PostCardContent';
@@ -73,6 +73,31 @@ const PostCard = ({ post }) => {
     });
   });
 
+  ////////////////////////////////////////// 
+  const loadKakaoSDK = () => {
+    const script = document.createElement("script");  // script 태그만들기
+    script.src= "https://developers.kakao.com/sdk/js/kakao.js"; // script src =""
+    script.async = true;
+    script.onload = () => {
+      if(window.Kakao) { window.Kakao.init("8eaccbf8ffe501e47eb4cadc3b7ae6a6"); } // js 앱키 
+    };
+    document.head.appendChild(script);
+  };
+
+  useEffect(() => { loadKakaoSDK(); }, []);
+
+  const shareToKakao = (postId) => {
+    window.Kakao.Link.sendDefault({
+      objectType: "text",
+      text: "이 링크를 확인해보세요!",
+      link: {
+      mobileWebUrl:`https://localhost:3000/post/${postId}`,
+      webUrl:`https://localhost:3000/post/${postId}`,
+      },
+    });
+  };
+
+ 
 
   //////////////////////////////////////////  view
   return (
@@ -106,6 +131,7 @@ const PostCard = ({ post }) => {
           >
             <EllipsisOutlined />
           </Popover>,
+          <ShareAltOutlined key="share" onClick={() => shareToKakao(post.id)} />
         ]}
         title={post.RetweetId ? `${post.User.nickname}님이 리트윗하셨습니다.` : null }
         extra={ id && id !== post.User.id && <FollowButton post={post}/> }
