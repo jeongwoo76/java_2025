@@ -1,3 +1,8 @@
+
+#### 2025.06.24
+1. spring + mybatis + security - ( jwt token )
+2. 3차 포트폴리오(2) 파트 분배 / crud / erd 작업 
+
 #### 2025.06.20
 1. spring + mybatis + security 정리(2) / mysql -  thejoa.sql / mysql008_board.sql
 2.  3차 포트폴리오 아이디어 회의 주제 선정 및 주요기능 선정
