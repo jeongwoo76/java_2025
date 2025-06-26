@@ -1,3 +1,6 @@
+#### 2025.06.25
+1. spring + mybatis + board ( upload + paging + image ) 글 목록 / 글쓰기
+2. 3차 포트폴리오 (3)  erd작업 더미데이터 넣기
 
 #### 2025.06.24
 1. spring + mybatis + security - ( jwt token )
