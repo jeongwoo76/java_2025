@@ -86,17 +86,32 @@ public class BoardController {
 		return "redirect:/board/list"; 
 	}
 	//////////////////////////////
-	@GetMapping("/board/update{id}")
-	public String update_get(Principal principal, Model model) { return "board/write"; }
+	@GetMapping("/board/edit/{id}")
+	public String update_get(@PathVariable Long id, Model model) { 
+		model.addAttribute("dto", service.update_view(id));
+		return "board/edit"; 
+	}
 	
-	@PostMapping("/board/update")
-	public String update_post(Principal principal) { return "board/list"; }
+	@PostMapping("/board/edit")
+	public String update_post(MultipartFile file, Board board, RedirectAttributes rttr) { 
+		String msg = service.update(file, board) > 0? "글수정 성공!":"fail";
+		rttr.addFlashAttribute("msg", msg);
+		return "redirect:/board/detail/" + board.getId(); 
+	}
 	
-	@GetMapping("/board/delete{id}")
-	public String delete_get(Principal principal, Model model) { return "board/write"; }
+	///////////////////////////////
+	@GetMapping("/board/delete/{id}")
+	public String delete_get(@PathVariable Long id, Model model) { 
+		model.addAttribute("id", id);
+		return "board/delete"; 
+	}
 	
 	@PostMapping("/board/delete")
-	public String delete_post(Principal principal) { return "board/list"; }
+	public String delete_post( Board board, RedirectAttributes rttr) {
+		String msg = service.delete(board) > 0 ? "글삭제 성공!":"fail";
+		rttr.addFlashAttribute("msg", msg);
+		return "redirect:/board/list"; 
+	}
 	
 	
 }

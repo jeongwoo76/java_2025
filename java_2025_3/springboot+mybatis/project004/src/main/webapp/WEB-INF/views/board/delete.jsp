@@ -3,11 +3,11 @@
 
 <div class="container"  style="margin-top:5%; min-height:500px">
 		<h3>MULTIBOARD 삭제</h3>
-		<form action="" 
+		<form action="${pageContext.request.contextPath}/board/delete" 
 			  method="post"   id="deleteForm"> 
 			<div class="form-group">
 			  <label for="bpass"  >비밀번호</label>
-			  <input type="hidden"   name="id" value=""    class="form-control" > 
+			  <input type="hidden"   name="id" value="${id}"    class="form-control" > 
 			  <input type="password"   name="bpass"   id="bpass"   class="form-control" > 
 			  <span>(*) 삭제시 필수입니다. </span>
 			</div>

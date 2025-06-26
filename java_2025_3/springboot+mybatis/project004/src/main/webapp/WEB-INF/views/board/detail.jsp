@@ -39,11 +39,13 @@
 		</div>
 	</div>	
 	<div class="text-end"    >
-		 <a href=""  
+		 <a href="${pageContext.request.contextPath}/board/edit/${dto.id}"  
 		 	class="btn btn-danger" >수정</a> 
-		 <a href=""  
+		 <a href="${pageContext.request.contextPath}/board/delete/${dto.id}"  
 		 	class="btn btn-danger" >삭제</a>    
-		 <a href=""  class="btn btn-primary" >목록보기</a> 
+		 <a href="${pageContext.request.contextPath}/board/list"  
+		 class="btn btn-primary" >목록보기</a> 
 	</div>						 
 </div>	
+
 <%@ include file="../inc/footer.jsp" %>
