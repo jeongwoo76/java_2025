@@ -1,3 +1,13 @@
+#### 2025.06.30
+1. 3차 포트폴리오(4) erd 수정 및 피드백 
+2. 3차 포트폴리오(4) MemberNft, NftMetadata, NftGiftLog 엔티티, mapper, controller, service 작업
+
+
+
+#### 2025.06.27
+1. 3차 포트폴리오(4) erd 추가 및 피그마 - 마이페이지,관리자페이지 (nft 쿠폰) 작업
+2. 3차 포트폴리오(4) 엔티티 작업, mapper 작업
+
 #### 2025.06.26
 1. spring + mybatis + board -update/delete
 2. 3차 포트폴리오(4) erd 추가 및 피그마 - 마이페이지,관리자페이지 (nft 쿠폰) 작업 
