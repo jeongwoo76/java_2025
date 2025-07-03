@@ -1,8 +1,16 @@
+#### 2025.07.03
+1. nft opensea 클레이튼 테스트넷 kaia kairos testnet 배포 및 판매 테스트 성공
+2. nft opensea 테스트넷 kaia kairos testnet 반려동물 관련 강아지, 고양이 이미지 배포 및 판매 테스트 성공
+
+
+#### 2025.07.02
+1. 3차 포트폴리오(4) 요구사항정의서 진행사항 점검 및 피드백 
+2. nft opensea 이더리움테스트넷 kaia kairos testnet 배포 및 판매 테스트 성공
+
+
 #### 2025.06.30
 1. 3차 포트폴리오(4) erd 수정 및 피드백 
 2. 3차 포트폴리오(4) MemberNft, NftMetadata, NftGiftLog 엔티티, mapper, controller, service 작업
-
-
 
 #### 2025.06.27
 1. 3차 포트폴리오(4) erd 추가 및 피그마 - 마이페이지,관리자페이지 (nft 쿠폰) 작업
