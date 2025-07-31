@@ -1,7 +1,6 @@
 package com.company.todo;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,26 +15,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/todos")
 public class TodoController {
-   private final TodoService service;
-   public TodoController(TodoService service) { this.service = service; }
-   
-   // GET     http://localhost:8080/api/todos
-   @GetMapping public List<Todo> getTodos() { return service.getAll(); }
+	private final TodoService service;
+	public TodoController(TodoService service) { this.service = service; }
+	
+	// GET     http://localhost:8080/api/todos
+	@GetMapping public List<Todo> getTodos() { return service.getAll(); }
 
-   // POST    http://localhost:8080/api/todos
-   // headers : Content-type: application/json   , body(raw/json)  {"title":"1" , "completed":false}
-   @PostMapping public Todo createTodo(@RequestBody Todo todo) {
-      return service.save(todo);
-   }
-   // Put    http://localhost:8080/api/todos/1 , body(raw/json)  {"title":"11" , "completed":true}
-   @PutMapping("/{id}")
-   public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
-      todo.setId(id);
-      return service.save(todo);
-   }
-   // Delete    http://localhost:8080/api/todos/1
-   @DeleteMapping("/{id}")
-   public void deleteTodo(@PathVariable Long id) {
-      service.delete(id);
-   }
+	// POST    http://localhost:8080/api/todos
+	// headers : Content-type: application/json   , body(raw/json)  {"title":"1" , "completed":false}
+	@PostMapping public Todo createTodo(@RequestBody Todo todo) {	return service.save(todo);}
+	// Put    http://localhost:8080/api/todos/1 , body(raw/json)  {"title":"11" , "completed":true}
+	@PutMapping("/{id}")
+	public Todo updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
+		todo.setId(id);
+		return service.save(todo);
+	}
+	// Delete    http://localhost:8080/api/todos/1
+	@DeleteMapping("/{id}")
+	public void deleteTodo(@PathVariable Long id) { 	service.delete(id); }
 }
+
+
+
+
+
+
+
+
+
+
+

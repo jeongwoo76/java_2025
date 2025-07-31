@@ -11,7 +11,7 @@
 	<groupId>com.company</groupId>
 	<artifactId>todo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>todo_back</name>
+	<name>todo_front</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
