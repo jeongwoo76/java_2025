@@ -1,3 +1,16 @@
+#### 2025.07.30
+1. flutter springboot todo_back 
+2. flutter todo_front
+
+#### 2025.07.29
+1. flutter project1 기본 문제풀이
+
+
+#### 2025.07.25
+1. django python basic project 문제풀이
+2. django python 자기소개 index 페이지 
+
+
 #### 2025.07.18
 1. 3차 프로젝트 발표대본, PPT 수정
 2. 3차 프로젝트 발표 예행연습
