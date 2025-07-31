@@ -1,3 +1,8 @@
+#### 2025.07.31
+1. flutter springboot todo_back 
+2. flutter todo_front crud 완성 
+
+
 #### 2025.07.30
 1. flutter springboot todo_back 
 2. flutter todo_front
